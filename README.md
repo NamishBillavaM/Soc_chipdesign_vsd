@@ -122,25 +122,48 @@ Device models, technology details, design rules, standard cell libraries, etc.
 
 ### Chip Floor and Power Planning:
 ![image](https://github.com/user-attachments/assets/84bf40ad-3ee3-423b-98cb-d7b21b9d23dd)
+- Floor and Power Planning is a critical stage in the VLSI (Very Large Scale Integration) design flow.
+- It is part of the physical design process, where the synthesized design (gate-level netlist) is prepared for placement, routing, and manufacturing.
+- This stage ensures that the chip's layout is organized, functional, and meets performance, area, and power requirements.
+- The main goal is to define the physical structure of the chip by determining the location of different functional blocks (e.g., CPU, SRAM, I/O pads) on the silicon die and creating a robust power distribution network.
 ### MACROS Floor and Power Planning:
 ![image](https://github.com/user-attachments/assets/3cb47a32-df61-4848-a858-22214307cf64)
 ### Power Planning:
 ![image](https://github.com/user-attachments/assets/d55e29cb-8b00-4ea9-b446-3848f5b68861)
 ### Placement:
+- Macro placement is a vital step in digital circuit design that defines the physical location of large collections of components, known as macros, on a 2-dimensional chip.
+- The physical layout obtained during placement determines key performance metrics of the chip, such as power consumption, area, and performance.
 ![image](https://github.com/user-attachments/assets/5ad0262a-1a6d-41a3-bcce-504ac36769e6)
 - Global placement provide approximate locations for all cells based on connectivity but in this stage the cells may be overlapped on each other and in detailed placement the positions obtained from global placements are minimally altered to make it legal (non-overlapping and in site-rows)
 ![image](https://github.com/user-attachments/assets/45a514f0-c7b9-43a0-872a-359a1bc4fc02)
 ### Clock Tree Synthesis:
+- Clock Tree Synthesis is a technique for distributing the clock equally among all sequential parts of a VLSI design.
+- The purpose of Clock Tree Synthesis is to reduce skew and delay.
+- Clock Tree Synthesis is provided with the placement data as well as the clock tree limitations as input.
+- Clock Tree Synthesis (CTS) is the technique of balancing the clock delay to all clock inputs by inserting buffers/inverters along the clock routes of an ASIC design.
+- As a result, CTS is used to balance the skew and reduce insertion latency.
+- Before Clock Tree Synthesis, all clock pins were driven by a single clock source.
+- Clock tree synthesis includes both clock tree construction and clock tree balance.
 ![image](https://github.com/user-attachments/assets/b0184966-cd5a-4bf2-b8ce-a5868bb38f16)
 - Clock skew is the time difference in arrival of clock at different components.
 ### Routing:
+- Routing in the VLSI design course is making physical connections between signal pins using metal layers.
+- Following Clock Tree Synthesis (CTS) and optimization, the routing step determines the exact pathways for interconnecting standard cells, macros, and I/O pins.
+- The layout creates electrical connections using metals and vias that are determined by the logical connections in the netlist (i.e.; logical connectivity converted as physical connectivity).
 ![image](https://github.com/user-attachments/assets/c2341136-a12c-4d8c-ab65-2d4522f5529d)
 - The skywater PDK has 6 routing layers in which the lowest layer is called the local interconnect layer which is a Titanium Nitride layer.
 - The following 5 layers are all Aluminium layers.
 ![image](https://github.com/user-attachments/assets/765108ee-41f6-4e80-9a02-3b86bbc34885)
 #### Detailed and Global Routing:
+- In VLSI design and chip layout, routing is key.
+- It shapes the circuit’s final form.
+- The process splits into two main parts: global routing and detailed routing. Knowing these differences is vital for chip design.
+- Global routing starts the process. It divides the chip into logical parts called buckets. This stage estimates the needed paths for each connection. It aims to fit all connections within the available resources.
+- Detailed routing comes next. It’s about making the actual wires for the chip. This step must follow strict rules for wire width and spacing. It ensures the circuit works right.
+- The two-stage method helps with complex designs. It tackles the big picture first, then the details. This way, designers manage the vast number of connections and rules.
 ![image](https://github.com/user-attachments/assets/1493a098-442d-4d21-9121-337ff4bc2053)
 ### Sign off
+- In semiconductor design, “sign-off” during the tape-out (tapeout) of a chip refers to the formal approval process to ensure that the chip design is error-free, meets all specifications, and is ready for manufacturing at the foundry.
 ![image](https://github.com/user-attachments/assets/7508ccc7-05a0-4ab0-9a54-704f0ea0ce43)
 - Once done with the routing the final layout can be generated which undergoes various Sign-Off checks.
 - Design Rules Checking (DRC) which verifies that the final layout honours all design fabrication rules.

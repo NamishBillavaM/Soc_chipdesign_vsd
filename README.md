@@ -169,27 +169,8 @@ Device models, technology details, design rules, standard cell libraries, etc.
 - Design Rules Checking (DRC) which verifies that the final layout honours all design fabrication rules.
 - Layout Vs Schematic (LVS) which verifies that the final layout functionality matches the gate-level netlist that we started with.
 - Static Timing Analysis (STA) to verify that the design runs at the designated clock frequency.
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </details>
-  
-  </details>
+   </details>
+ </details>
  
 
 
@@ -199,7 +180,45 @@ Device models, technology details, design rules, standard cell libraries, etc.
   <summary>
 Expand or Collapse
   </summary>
-    </details>
+    
+## GETTING FAMILIAR TO OPENSOURCE EDA TOOLS
+<details>
+  <summary>
+Expand or Collapse
+  </summary>
+
+### OPENLANE DIRECTORY STRUCTURE:-
+
+```bash
+# Change directory to openlane flow directory
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+# alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
+# Since we have aliased the long command to 'docker' we can invoke the OpenLANE flow docker sub-system by just running this command
+docker
+```tcl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</details> </details>
   
   
   

@@ -112,6 +112,58 @@ Device models, technology details, design rules, standard cell libraries, etc.
 - Open-source initiatives like the SkyWater PDK and OpenLANE are making ASIC design more accessible, enabling innovation in academia and industry.
   ![312934312-533f58ee-4524-4a18-abb5-36b4d6a56b1f](https://github.com/user-attachments/assets/5f798657-94d9-41a4-963a-d5772579b353)
 
+### Synthesis:
+- Synthesis is the process of convertion or translation of design RTL into circuits made out of Standard Cell Libraries (SCL) the resultant circuit is described in HDL and is usually reffered to as the Gate-Level Netlist.
+- Gate-Level Netlist is functionally equivalent to the RTL.
+  ![image](https://github.com/user-attachments/assets/a2f8c68f-1d29-40d8-b368-80c0201da5b7)
+- The fundemental building blocks which are the standard cells have regular layouts.
+- Each cell has different views/models which are utilised by different EDA tools like liberty view with electrical models of the cells, HDL behavioral models, SPICE or CDL views of the cells, Layout view which include GDSII view which is the detailed view and LEF view which is the abstract view.
+  ![image](https://github.com/user-attachments/assets/847c6756-320a-41ea-bac5-80443f9f2686)
+
+### Chip Floor and Power Planning:
+![image](https://github.com/user-attachments/assets/84bf40ad-3ee3-423b-98cb-d7b21b9d23dd)
+### MACROS Floor and Power Planning:
+![image](https://github.com/user-attachments/assets/3cb47a32-df61-4848-a858-22214307cf64)
+### Power Planning:
+![image](https://github.com/user-attachments/assets/d55e29cb-8b00-4ea9-b446-3848f5b68861)
+### Placement:
+![image](https://github.com/user-attachments/assets/5ad0262a-1a6d-41a3-bcce-504ac36769e6)
+- Global placement provide approximate locations for all cells based on connectivity but in this stage the cells may be overlapped on each other and in detailed placement the positions obtained from global placements are minimally altered to make it legal (non-overlapping and in site-rows)
+![image](https://github.com/user-attachments/assets/45a514f0-c7b9-43a0-872a-359a1bc4fc02)
+### Clock Tree Synthesis:
+![image](https://github.com/user-attachments/assets/b0184966-cd5a-4bf2-b8ce-a5868bb38f16)
+- Clock skew is the time difference in arrival of clock at different components.
+### Routing:
+![image](https://github.com/user-attachments/assets/c2341136-a12c-4d8c-ab65-2d4522f5529d)
+- The skywater PDK has 6 routing layers in which the lowest layer is called the local interconnect layer which is a Titanium Nitride layer.
+- The following 5 layers are all Aluminium layers.
+![image](https://github.com/user-attachments/assets/765108ee-41f6-4e80-9a02-3b86bbc34885)
+#### Detailed and Global Routing:
+![image](https://github.com/user-attachments/assets/1493a098-442d-4d21-9121-337ff4bc2053)
+### Sign off
+![image](https://github.com/user-attachments/assets/7508ccc7-05a0-4ab0-9a54-704f0ea0ce43)
+- Once done with the routing the final layout can be generated which undergoes various Sign-Off checks.
+- Design Rules Checking (DRC) which verifies that the final layout honours all design fabrication rules.
+- Layout Vs Schematic (LVS) which verifies that the final layout functionality matches the gate-level netlist that we started with.
+- Static Timing Analysis (STA) to verify that the design runs at the designated clock frequency.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </details>
   
   </details>

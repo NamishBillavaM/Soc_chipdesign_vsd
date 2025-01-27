@@ -38,6 +38,7 @@ Expand or Collapse
 - It is a C program which has to be run on a specific hardware layout which is the interior of a chip in your laptop,PC or any other device there is certain flow to be followed.
 - An INSTRUCTION SET ARCHITECTURE (ISA) is part of the abstract model of a computer that defines how the CPU is controlled by the software.
 - HARDWARE DESCRIPTION LANGUAGE(HDL) is present as an interface between the RISC V ARCHITECTURE and the layout.
+  
   ![DAY15](https://github.com/user-attachments/assets/79481bfa-b943-451a-b09f-294c844ce7e2)
 #### FLOW :
 - C Program to Assembly Language The C program is written in a high-level language for ease of programming. A compiler (like GCC with RISC-V backend) translates the C code into assembly language instructions adhering to the RISC-V ISA. These instructions are human-readable but hardware-specific, tailored to the RISC-V architecture.

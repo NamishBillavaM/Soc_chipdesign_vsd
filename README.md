@@ -201,10 +201,10 @@ Utilization\ Factor = 1
   ```math
 Aspect\ Ratio = \frac{Height}{Width}
 ```
- ```math
+```math
 Aspect\ Ratio = \frac{2\ units}{2\ units}
 ```
- ```math
+```math
 Aspect\ Ratio = 1
 ```
 - If the aspect ratio is **1**, then it signifies that the chip is a square.
@@ -222,9 +222,6 @@ Aspect\ Ratio = 1
 
 
 
-
-
-
 </details>
  </details>
  
@@ -232,13 +229,12 @@ Aspect\ Ratio = 1
 
 
 ## PRACTICAL
-  <details>
+ <details>
   <summary>
 Expand or Collapse
   </summary>
     
 ## GETTING FAMILIAR TO OPENSOURCE EDA TOOLS
-<details>
   <summary>
 Expand or Collapse
   </summary>
@@ -276,23 +272,22 @@ bash-4.2$ ./flow.tcl -interactive
   
 #### SECTION 1 TASK - CALCULATE THE FLIP FLOP RATIO :-
 
-```math
-Flop\ Ratio = \frac{Number\ of\ D\ Flip\ Flops}{Total\ Number\ of\ Cells}
-```
+
+$Flop\ Ratio = \frac{Number\ of\ D\ Flip\ Flops}{Total\ Number\ of\ Cells}$
+
 ##### CALCULATION OF FLOP RATIO USING DATA FROM SYNTHESIS STATISTICS REPORT :-
 ![image](https://github.com/user-attachments/assets/ef8f1059-6a0d-4739-8742-28ed44768dae)
 ![image](https://github.com/user-attachments/assets/04279ed1-15d0-40a8-af90-d4fc00af8a89)
 
-```math
-Flop\ Ratio = \frac{1613}{14876} = 0.10842968539
-```
-```math
-PERCENTAGE\ OF\ D\ FLIP\ FLOPS' = 0.10842968539 * 100 = 10.842968539
-```
-</details>
+
+$$Flop\ Ratio = \frac{1613}{14876} = 0.10842968539$$
 
 
+$PERCENTAGE\ OF\ D\ FLIP\ FLOPS' = 0.10842968539 * 100 = 10.842968539$
+
 </details>
+</details>
+
   
   
   

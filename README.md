@@ -187,26 +187,22 @@ Converting the highlighted symbols into physical dimensions:
 - A **CORE** is the section of the chip where the fundamental logic of the design is placed.
 - A **DIE**, which consists of core, is a small semiconductor material specimen on which the fundamental circuit is fabricated.
 ![image](https://github.com/user-attachments/assets/d37d0c08-e769-44cf-b7f0-8d8dcbd1d6c1)
-```math
-Utilization\ Factor = \frac{Area\ Occupied\ By\ Netlist}{Total\ Area\ of\ The\ Core}
-```
-```math
-Utilization\ Factor = \frac{4\ sq.\ units}{2\ unit\ * \ 2\ unit}
-```
-```math
-Utilization\ Factor = 1
-```
+
+$$Utilization\ Factor = \frac{Area\ Occupied\ By\ Netlist}{Total\ Area\ of\ The\ Core}$$
+
+$$Utilization\ Factor = \frac{4\ sq.\ units}{2\ unit\ * \ 2\ unit}$$
+
+$$Utilization\ Factor = 1$$
+
 - In real life scenarios, some space is always left for future changes.
 - Ideal utilizatiion perentage is 50-60% and the ideal utilization factor is 0.5-0.6
-  ```math
-Aspect\ Ratio = \frac{Height}{Width}
-```
-```math
-Aspect\ Ratio = \frac{2\ units}{2\ units}
-```
-```math
-Aspect\ Ratio = 1
-```
+ 
+$$Aspect\ Ratio = \frac{Height}{Width}$$
+
+$$Aspect\ Ratio = \frac{4\ units}{2\ units\ * \ 2\ units}$$
+
+$$Aspect\ Ratio = 1$$
+
 - If the aspect ratio is **1**, then it signifies that the chip is a square.
 ### Concept of Pre PLaced Cells :-
 ![image](https://github.com/user-attachments/assets/2269130f-9f27-4b6a-821b-a10beeb4ad3f)
@@ -214,7 +210,7 @@ Aspect\ Ratio = 1
 - These **IPs**/**BLOCKS** have user defined locations, and hence are placed in a chip before automated placement and routing. So they are called as **preplaced cells**.
 - Automated placement and routing tools places the remaining logiacal cells in the design onto the chip.
   ![image](https://github.com/user-attachments/assets/3bcf4e44-ce01-48ef-89ad-500614cf41f7)
-### Surrounding THe Preplaced Cells with Decoupling Capacitors :-
+### Surrounding The Preplaced Cells with Decoupling Capacitors :-
 ![image](https://github.com/user-attachments/assets/62a1ae66-07a0-4bcc-9312-edfcc0f1e6be)
 - A decoupling capacitor is a capacitor, which is used decouple the critical cells from main power supply, in order to protect the cells from the disturbance occuring in the power distribution lines and source.
 - The purpose of using decoupling capacitors is to deliver current to the gates during switching.
@@ -225,6 +221,24 @@ Aspect\ Ratio = 1
 ![image](https://github.com/user-attachments/assets/6091d8fa-71db-47cf-839d-dbfee6b0999d)
 ![image](https://github.com/user-attachments/assets/9755dcec-3bd6-40b5-8297-45f8853cb34d)
 ### Pin Placement and Logical Cell Placement Blockage :-
+- The connectivity information between the gates is coded using VHDL/Verilog Language and is called as the **NETLIST**.
+![image](https://github.com/user-attachments/assets/deb9787e-5f65-409d-9564-8e56dba87bd6)
+- Avoid repetition of input or output pins
+- The area between the DIE and the CORE has to be blocked so that the space is reserved for pin configuration.
+![image](https://github.com/user-attachments/assets/86853323-4d6b-41a7-92e2-38371ddd64ea)
+### Netlist Binding and Initial Place Design :-
+#### Library :
+- It consists of cells, shapes and size of the cells, various flavours of the same cells and timing information.
+![image](https://github.com/user-attachments/assets/84a0ef25-63a1-437d-b90c-fc1538058e99)
+![image](https://github.com/user-attachments/assets/1fa9d260-84b6-41f8-ba0a-00437ef41ff5)
+#### Optimizing Placement :-
+- This is the stage where we estimate wire length and capacitance, and based on that, insert repeaters.
+- **REPEATERS** are buffers that recondition the original signal, make a new signal, and sends the data forward.
+##### Placement of Buffers :
+![image](https://github.com/user-attachments/assets/625b2f47-7321-43b6-bcf0-578bed94903b)
+
+
+
 
 
 
@@ -243,6 +257,7 @@ Expand or Collapse
   </summary>
     
 ## GETTING FAMILIAR TO OPENSOURCE EDA TOOLS
+<details>
   <summary>
 Expand or Collapse
   </summary>
@@ -294,7 +309,60 @@ $$Flop\ Ratio = \frac{1613}{14876} = 0.10842968539$$
 $PERCENTAGE\ OF\ D\ FLIP\ FLOPS' = 0.10842968539 * 100 = 10.842968539$
 
 </details>
+
+## RUNNING FLOORPLAN IN OPENLANE 
+<details>
+<summary>
+Expand or Collapse
+  </summary>
+  
+### COMMANDS:-
+```bash
+# Change directory to openlane flow directory
+cd Desktop/work/tools/openlane_working_dir/openlane
+# Run the docker command
+docker
+```
+```tcl
+# Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
+./flow.tcl -interactive
+
+# Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
+package require openlane 0.9
+
+# Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+prep -design picorv32a
+
+# Now that the design is prepped and ready, we can run synthesis using following command
+run_synthesis
+
+# Now we can run floorplan
+run_floorplan
+```
+![floor1](https://github.com/user-attachments/assets/af2f666b-a937-4c57-8312-e63bf48a61a7)
+![floor2](https://github.com/user-attachments/assets/88d8879c-a32d-4f82-b4bf-fc6f9244582d)
+### Floorplan.def in MAGIC :-
+![image](https://github.com/user-attachments/assets/50ba615c-4ef8-4b05-b4b0-e449309ff887)
+### Equidistant Placement of PINS :-
+![image](https://github.com/user-attachments/assets/2a1881b1-c4ae-4b00-8b6b-025df2965a74)
+### PIN LAYER Is As Set In config.tcl :-
+![image](https://github.com/user-attachments/assets/da86b69d-0fe0-4bea-bf57-a77f30c67cba)
+### DECAP Cells and TAP Cells :-
+![image](https://github.com/user-attachments/assets/a17d02ba-4122-4f75-b4d0-cea2d547ba5c)
+### Unplaced Standard Cells :-
+![image](https://github.com/user-attachments/assets/bbda129d-10fd-4fa6-bfd4-cff764d41d05)
+
+
+
+
+
+
+
 </details>
+</details>
+
+
+
 
   
   

@@ -237,30 +237,68 @@ $$Aspect\ Ratio = 1$$
 ![image](https://github.com/user-attachments/assets/84a0ef25-63a1-437d-b90c-fc1538058e99)
 ![image](https://github.com/user-attachments/assets/1fa9d260-84b6-41f8-ba0a-00437ef41ff5)
 #### Optimizing Placement :-
-- This is the stage where we estimate wire length and capacitance, and based on that, insert repeaters.
+- This is the stage where we estimate wire length and capacitance, and based on that, insert repeaters.      
 - **REPEATERS** are buffers that recondition the original signal, make a new signal, and sends the data forward.
 ##### Placement of Buffers :
 ![image](https://github.com/user-attachments/assets/625b2f47-7321-43b6-bcf0-578bed94903b)
+### Library Charecterisation and Modelling:-
+#### Logic Synthesis :-
+- It is an arrangement of gates that represents the original functionality described using an RTL.
+#### Floor Planning :-
+- Floor planning is the most important process in physical design.
+- floor planning is the process of placing blocks/MACROS in the chip or core area.
+- In this step we hae netlist which describes the design and the various blocks of the design and the interconnection between the different blocks.
+#### Placement :-
+- Macro placement is a vital step in digital circuit design that defines the physical location of large collections of components, known as macros, on a 2-dimensional chip.
+- The physical layout obtained during placement determines key performance metrics of the chip, such as power consumption, area, and performance.
+#### Clock Tree Synthesis :-
+- Clock Tree Synthesis is a technique for distributing the clock equally among all sequential parts of a VLSI design.
+- The purpose of Clock Tree Synthesis is to reduce skew and delay.
+- Clock Tree Synthesis is provided with the placement data as well as the clock tree limitations as input.
+- Clock Tree Synthesis (CTS) is the technique of balancing the clock delay to all clock inputs by inserting buffers/inverters along the clock routes of an ASIC design.
+- As a result, CTS is used to balance the skew and reduce insertion latency.
+- Before Clock Tree Synthesis, all clock pins were driven by a single clock source.
+- Clock tree synthesis includes both clock tree construction and clock tree balance.
+#### Routing :-
+- Routing in the VLSI design course is making physical connections between signal pins using metal layers.
+- Following Clock Tree Synthesis (CTS) and optimization, the routing step determines the exact pathways for interconnecting standard cells, macros, and I/O pins.
+- The layout creates electrical connections using metals and vias that are determined by the logical connections in the netlist (i.e.; logical connectivity converted as physical connectivity).
+
+- Cell library characterization is a process of analyzing a circuit using static and dynamic methods to generate models suitable for chip implementation flows.
+- Library characterization is a process of simulating a standard cell using analog simulators to extract input load, speed, and power data in a way that the downstream tools can process it all.
+- This can be done via a specific analog simulator whose output is used to generate the characterization data, or by using a library characterization tool.
+
+### Cell Design Flow :-
+#### Standard Cells :-
+- Standard cells are pre-designed, pre-characterized, and pre-verified functional blocks that encapsulate a specific logic function, such as AND gates, flip-flops, or latches.
+- These cells adhere to a predefined height and are designed to seamlessly interconnect, allowing for the creation of intricate digital circuits.
+
+- Standard cells are palced in libraries.
+- Libraries consist of cells of different functionality, VT and sizes also.
+  
+![image](https://github.com/user-attachments/assets/02c31d0f-fc90-4893-9f81-1796e4063e52)
+![image](https://github.com/user-attachments/assets/4da97f47-174b-477a-994f-1ef81f346925)
+![image](https://github.com/user-attachments/assets/d95f3700-4d8d-489e-b9b9-221d7cdb8a31)
+![image](https://github.com/user-attachments/assets/382ea206-c941-4805-8831-299223416a0f)
+#### Charaterization Flow :-
+- Cell library characterization is a process of analyzing a circuit using static and dynamic methods to generate models suitable for chip implementation flows.
+- Library characterization is a process of simulating a standard cell using analog simulators to extract input load, speed, and power data in a way that the downstream tools can process it all.
+- This can be done via a specific analog simulator whose output is used to generate the characterization data, or by using a library characterization tool.
 
 
 
 
 
 
-
+  
 
 </details>
  </details>
  
 
-
-
-## PRACTICAL
- <details>
-  <summary>
-Expand or Collapse
-  </summary>
-    
+  
+  
+  
 ## GETTING FAMILIAR TO OPENSOURCE EDA TOOLS
 <details>
   <summary>
@@ -268,8 +306,13 @@ Expand or Collapse
   </summary>
 
 ### RUNNING OPENLANE IN INTERACTIVE MODE:-
+<details>
+<summary>
+Expand or Collapse
+  </summary>
 
 ```bash
+
 # Change directory to openlane directory
 vsduser@vsdsquadron:~$
 vsduser@vsdsquadron:~$ cd Desktop/work/tools
@@ -282,12 +325,21 @@ bash-4.2$
 bash-4.2$ ./flow.tcl -interactive
 # program starts running in interactive mode
 ```
+
 ![image](https://github.com/user-attachments/assets/ffcd36fc-412c-42c7-b90c-3db03a4f3432)
 ![image](https://github.com/user-attachments/assets/d3ed419f-5416-4dbd-9fba-56b3f700f6c3)
 - a new directory will open in the runs folder
 ![image](https://github.com/user-attachments/assets/854a0684-e24b-4a85-ae1c-6ecfd17c9748)
-- Commands to run synthesis :-
+</details>
+
+### Commands to Run Synthesis :-
+<details>
+<summary>
+Expand or Collapse
+  </summary>
+  
 ```bash
+  
 % package require openlane 0.9
 0.9
 # Now the OpenLANE flow is ready to run any design.
@@ -315,7 +367,7 @@ $PERCENTAGE\ OF\ D\ FLIP\ FLOPS' = 0.10842968539 * 100 = 10.842968539$
 
 </details>
 
-## RUNNING FLOORPLAN IN OPENLANE 
+### RUNNING FLOORPLAN IN OPENLANE 
 <details>
 <summary>
 Expand or Collapse
@@ -323,12 +375,13 @@ Expand or Collapse
   
 ### COMMANDS:-
 ```bash
+
 # Change directory to openlane flow directory
 cd Desktop/work/tools/openlane_working_dir/openlane
 # Run the docker command
 docker
 ```
-```tcl
+```bash
 # Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
 ./flow.tcl -interactive
 
@@ -344,8 +397,18 @@ run_synthesis
 # Now we can run floorplan
 run_floorplan
 ```
+
 ![floor1](https://github.com/user-attachments/assets/af2f666b-a937-4c57-8312-e63bf48a61a7)
 ![floor2](https://github.com/user-attachments/assets/88d8879c-a32d-4f82-b4bf-fc6f9244582d)
+- Commands to load floorplan def in magic in another terminal
+
+```bash
+# Change directory to path containing generated floorplan def
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/28-01_13-06/results/floorplan/
+
+# Command to load the floorplan def in magic tool
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
 ### Floorplan.def in MAGIC :-
 ![image](https://github.com/user-attachments/assets/50ba615c-4ef8-4b05-b4b0-e449309ff887)
 ### Equidistant Placement of PINS :-
@@ -356,16 +419,41 @@ run_floorplan
 ![image](https://github.com/user-attachments/assets/a17d02ba-4122-4f75-b4d0-cea2d547ba5c)
 ### Unplaced Standard Cells :-
 ![image](https://github.com/user-attachments/assets/bbda129d-10fd-4fa6-bfd4-cff764d41d05)
-
-
-
-
-
-
-
 </details>
+
+### RUNNING PLACEMENT IN OPENLANE
+<details>
+<summary>
+Expand or Collapse
+  </summary>
+  
+```bash
+# After floor planning, the next step is placement. run the following command
+% run_placement
+# The placement process starts
+```
+  
+#### Load Placement.DEf in Magic :-
+```bash
+
+# Change directory to path containing generated placement def
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/28-01_15-09/results/placement/
+
+# Command to load the placement def in magic tool
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
+#### Placement.def in Magic :-
+![image](https://github.com/user-attachments/assets/900661c3-ceb5-4224-b5d1-90dfbddff636)
+##### Legally placed Standard Cells :-
+![image](https://github.com/user-attachments/assets/ea9f1f6a-8b99-43b7-a4fb-e362f10db77f)
+
+
+
+
+  </details>
 </details>
-</details>
+
+
 
 
 

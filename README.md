@@ -170,6 +170,62 @@ Device models, technology details, design rules, standard cell libraries, etc.
 - Layout Vs Schematic (LVS) which verifies that the final layout functionality matches the gate-level netlist that we started with.
 - Static Timing Analysis (STA) to verify that the design runs at the designated clock frequency.
    </details>
+
+## GOOD FLOORPLAN VS BAD FLOORPLAN AND INTRODUCTION TO LIBRARY CELLS
+ <details>
+  <summary>
+Expand or Collapse
+  </summary>
+
+### Utilization Factor and Aspect Ratio :-
+![image](https://github.com/user-attachments/assets/559c07c6-2507-4d15-a4ea-1c6048681e82)
+![image](https://github.com/user-attachments/assets/1729eb1f-30e4-4015-b15e-c5382e395649)
+- **_A NETLIST DESCRIBES THE CONNECTIVITY AND FLOW OF AN ELECTRONIC DESIGN._**
+- Dimensions of a chip is mostly dependant on dimensions of the logic gates.
+Converting the highlighted symbols into physical dimensions:
+![image](https://github.com/user-attachments/assets/7c127126-2e37-4592-8bd5-7a6058e9978e)
+- A **CORE** is the section of the chip where the fundamental logic of the design is placed.
+- A **DIE**, which consists of core, is a small semiconductor material specimen on which the fundamental circuit is fabricated.
+![image](https://github.com/user-attachments/assets/d37d0c08-e769-44cf-b7f0-8d8dcbd1d6c1)
+```math
+Utilization\ Factor = \frac{Area\ Occupied\ By\ Netlist}{Total\ Area\ of\ The\ Core}
+```
+```math
+Utilization\ Factor = \frac{4\ sq.\ units}{2\ unit\ * \ 2\ unit}
+```
+```math
+Utilization\ Factor = 1
+```
+- In real life scenarios, some space is always left for future changes.
+- Ideal utilizatiion perentage is 50-60% and the ideal utilization factor is 0.5-0.6
+  ```math
+Aspect\ Ratio = \frac{Height}{Width}
+```
+ ```math
+Aspect\ Ratio = \frac{2\ units}{2\ units}
+```
+ ```math
+Aspect\ Ratio = 1
+```
+- If the aspect ratio is **1**, then it signifies that the chip is a square.
+### Concept of Pre PLaced Cells :-
+![image](https://github.com/user-attachments/assets/2269130f-9f27-4b6a-821b-a10beeb4ad3f)
+- The arrangement of these **IPs** in a chip ia called floor planning.
+- These **IPs**/**BLOCKS** have user defined locations, and hence are placed in a chip before automated placement and routing. So they are called as **preplaced cells**.
+- Automated placement and routing tools places the remaining logiacal cells in the design onto the chip.
+  ![image](https://github.com/user-attachments/assets/3bcf4e44-ce01-48ef-89ad-500614cf41f7)
+### Surrounding THe Preplaced Cells with Decoupling Capacitors :-
+![image](https://github.com/user-attachments/assets/62a1ae66-07a0-4bcc-9312-edfcc0f1e6be)
+- A decoupling capacitor is a capacitor, which is used decouple the critical cells from main power supply, in order to protect the cells from the disturbance occuring in the power distribution lines and source.
+- The purpose of using decoupling capacitors is to deliver current to the gates during switching.
+
+
+
+
+
+
+
+</details>
  </details>
  
 
@@ -187,45 +243,63 @@ Expand or Collapse
 Expand or Collapse
   </summary>
 
-### OPENLANE DIRECTORY STRUCTURE:-
+### RUNNING OPENLANE IN INTERACTIVE MODE:-
 
 ```bash
-# Change directory to openlane flow directory
-cd Desktop/work/tools/openlane_working_dir/openlane
-
-# alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
-# Since we have aliased the long command to 'docker' we can invoke the OpenLANE flow docker sub-system by just running this command
-docker
-
+# Change directory to openlane directory
+vsduser@vsdsquadron:~$
+vsduser@vsdsquadron:~$ cd Desktop/work/tools
+vsduser@vsdsquadron:~Desktop/work/tools$ cd openlane_working_dir/openlane
+vsduser@vsdsquadron:~Desktop/work/tools/openlane_working_dir/openlane$
+# run command docker
+vsduser@vsdsquadron:~Desktop/work/tools/openlane_working_dir/openlane$ docker
+bash-4.2$
+#give command to run in interactive mode
+bash-4.2$ ./flow.tcl -interactive
+# program starts running in interactive mode
 ```
-
+![image](https://github.com/user-attachments/assets/ffcd36fc-412c-42c7-b90c-3db03a4f3432)
+![image](https://github.com/user-attachments/assets/d3ed419f-5416-4dbd-9fba-56b3f700f6c3)
+- a new directory will open in the runs folder
+![image](https://github.com/user-attachments/assets/854a0684-e24b-4a85-ae1c-6ecfd17c9748)
+- Commands to run synthesis :-
+```bash
+% package require openlane 0.9
+0.9
+# Now the OpenLANE flow is ready to run any design.
+# Initially we have to prep the design creating some necessary files and directories for running the 'picorv32a'
+% prep -design picorv32a
+# The design is prepped and ready, we can run synthesis using following command
+% run_synthesis
+# Synthesis starts
+```
   
-  
-  
+#### SECTION 1 TASK - CALCULATE THE FLIP FLOP RATIO :-
 
+```math
+Flop\ Ratio = \frac{Number\ of\ D\ Flip\ Flops}{Total\ Number\ of\ Cells}
+```
+##### CALCULATION OF FLOP RATIO USING DATA FROM SYNTHESIS STATISTICS REPORT :-
+![image](https://github.com/user-attachments/assets/ef8f1059-6a0d-4739-8742-28ed44768dae)
+![image](https://github.com/user-attachments/assets/04279ed1-15d0-40a8-af90-d4fc00af8a89)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+```math
+Flop\ Ratio = \frac{1613}{14876} = 0.10842968539
+```
+```math
+PERCENTAGE\ OF\ D\ FLIP\ FLOPS' = 0.10842968539 * 100 = 10.842968539
+```
 </details>
 
+## GOOD FLOORPLAN VS BAD FLOORPLAN AND INTRODUCTION TO LIBRARY CELLS
+ <details>
+  <summary>
+Expand or Collapse
+  </summary>
+
+### Utilization Factor and Aspect Ratio :-
+
+</details>
 </details>
   
   

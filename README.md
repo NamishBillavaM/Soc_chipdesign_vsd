@@ -291,15 +291,7 @@ PERCENTAGE\ OF\ D\ FLIP\ FLOPS' = 0.10842968539 * 100 = 10.842968539
 ```
 </details>
 
-## GOOD FLOORPLAN VS BAD FLOORPLAN AND INTRODUCTION TO LIBRARY CELLS
- <details>
-  <summary>
-Expand or Collapse
-  </summary>
 
-### Utilization Factor and Aspect Ratio :-
-
-</details>
 </details>
   
   

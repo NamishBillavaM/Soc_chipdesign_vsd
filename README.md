@@ -218,6 +218,14 @@ Aspect\ Ratio = 1
 ![image](https://github.com/user-attachments/assets/62a1ae66-07a0-4bcc-9312-edfcc0f1e6be)
 - A decoupling capacitor is a capacitor, which is used decouple the critical cells from main power supply, in order to protect the cells from the disturbance occuring in the power distribution lines and source.
 - The purpose of using decoupling capacitors is to deliver current to the gates during switching.
+### Power Planning :-
+![image](https://github.com/user-attachments/assets/db829ed4-118e-4c8c-9811-2b8f41146896)
+- If power is drawn from only one point, then it it might result in a **VOLTAGE DROOP** in VDD or a **VOLTAGE BUMP** in the VSS.
+- The solution of this problem if to have many power supply points.
+![image](https://github.com/user-attachments/assets/6091d8fa-71db-47cf-839d-dbfee6b0999d)
+![image](https://github.com/user-attachments/assets/9755dcec-3bd6-40b5-8297-45f8853cb34d)
+### Pin Placement and Logical Cell Placement Blockage :-
+
 
 
 

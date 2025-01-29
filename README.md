@@ -88,6 +88,7 @@ Expand or Collapse
   </details>
   
 ### SOC DESIGN AND OPENLANE
+
   <details>
   <summary>
 Expand or Collapse

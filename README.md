@@ -563,8 +563,11 @@ ls
 # Command to open custom inverter layout in magic
 magic -T sky130A.tech sky130_inv.mag &
 ```
-![image](https://github.com/user-attachments/assets/18f9a55a-b5ba-4b94-898d-2333f07b9deb)
 ![image](https://github.com/user-attachments/assets/ea12a4c4-810c-4567-aab4-92128ddbc1e1)
+![image](https://github.com/user-attachments/assets/18f9a55a-b5ba-4b94-898d-2333f07b9deb)
+![image](https://github.com/user-attachments/assets/e32c950d-ed82-42ba-abf7-62109819da35)
+
+
 
 
 

@@ -195,6 +195,7 @@ Device models, technology details, design rules, standard cell libraries, etc.
    </details>
 
 ### GOOD FLOORPLAN VS BAD FLOORPLAN AND INTRODUCTION TO LIBRARY CELLS
+
  <details>
   <summary>
 Expand or Collapse

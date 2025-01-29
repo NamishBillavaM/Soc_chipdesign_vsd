@@ -521,6 +521,17 @@ Vin in 0 2.5
 .LIB  "tsmc_025um_model.mod" CMOS_MODELS
 .end
 ```
+### Switching Threshold :-
+- The switching threshold, Vm, is defined as the point where Vin = Vout. 
+- Switching threshold can be set by the ratio of relative driving strengths of the PMOS and NMOS transistors.
+- To move Vm upwards, a larger value of ratio is required, which means making the PMOS wider.
+- Increasing the strength of the NMOS, on the other hand, moves the switching threshold closer to GND.
+
+- The effect of changing the Wp/Wn ratio is to shift the transient region of the VTC.
+- Increasing the width of the PMOS or the NMOS moves VM towards VDD or GND respectively.
+- This property can be very useful, as asymmetrical transfer characteristics are actually desirable in some designs.
+
+
 
 
 

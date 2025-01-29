@@ -10,7 +10,7 @@ Expand or Collapse
 Expand or Collapse
   </summary>
 
-## HOW TO TALK TO COMPUTERS
+### HOW TO TALK TO COMPUTERS
 <details>
   <summary>
 Expand or Collapse
@@ -82,7 +82,7 @@ Expand or Collapse
 - Fabrication → Produces the physical chip ready to execute machine code.
   </details>
   
-  ## SOC DESIGN AND OPENLANE
+### SOC DESIGN AND OPENLANE
   <details>
   <summary>
 Expand or Collapse
@@ -176,7 +176,7 @@ Device models, technology details, design rules, standard cell libraries, etc.
 - Static Timing Analysis (STA) to verify that the design runs at the designated clock frequency.
    </details>
 
-## GOOD FLOORPLAN VS BAD FLOORPLAN AND INTRODUCTION TO LIBRARY CELLS
+### GOOD FLOORPLAN VS BAD FLOORPLAN AND INTRODUCTION TO LIBRARY CELLS
  <details>
   <summary>
 Expand or Collapse
@@ -284,6 +284,32 @@ $$Aspect\ Ratio = 1$$
 - Cell library characterization is a process of analyzing a circuit using static and dynamic methods to generate models suitable for chip implementation flows.
 - Library characterization is a process of simulating a standard cell using analog simulators to extract input load, speed, and power data in a way that the downstream tools can process it all.
 - This can be done via a specific analog simulator whose output is used to generate the characterization data, or by using a library characterization tool.
+### General Timing Characterization Parameter :-
+#### Timing Threshold Definitions :
+![image](https://github.com/user-attachments/assets/f0da193c-ebfe-40bf-b2ad-4aada44b5611)
+- The threshold voltage, often denoted as Vth or VGS(th), represents the minimum voltage that needs to be applied to the gate of an MOSFET to establish a conductive channel between its source and drain terminals.
+- This conductive channel paves the way for current flow, transforming the transistor from an insulator to a conductor.
+- SLEW is defined as
+   1.] The time it takes for a signal to transition from one voltage level to another.
+   2.] The rate at which a signal (its voltage) transitions from one logic level to another or simply the rate of change of voltage with respect to time.
+- The slew (slew rate) is also known as transition delay.
+#### Propagation Delay :
+- The propagation delay of a logic gate is defined as the time it takes for the effect of a change in input to be evident at the output.
+- In other words, propagation delay is the time it takes for the input to reach the output.
+- Propagation delay in VLSI is normally described as the time difference between when the transitional input reaches 50% of its final value and when the output reaches 50% of its final value. This demonstrates the influence of input change.
+- In the above case, 50% is defined as the logic threshold at which output (or, more specifically, any signal) is presumed to flip states. It is represented by the symbol ‘tpd’. It is also known as gate delay.
+![image](https://github.com/user-attachments/assets/d5d2ca25-7920-4077-a9cd-da9b698fa310)
+![image](https://github.com/user-attachments/assets/5c6c004c-2477-436a-9dc9-5e6b3b5faed0)
+#### Transition Time :
+- Transition delay or slew is defined as the time taken by signal to rise from 10 %( 20%) to the 90 %( 80%) of its maximum value. This is known as “rise time”.
+- Similarly “fall time” can be defined as the time taken by a signal to fall from 90 %( 80%) to the 10 %( 20%) of its maximum value.
+- Transition is the time it takes for the pin to change state.
+![image](https://github.com/user-attachments/assets/a25aeea4-4f5b-4d26-ab18-6886a40d4ed5)
+![image](https://github.com/user-attachments/assets/101dec2c-5cf4-419a-8e24-29d75470c78e)
+
+
+
+
 
 
 

@@ -334,6 +334,13 @@ $$Aspect\ Ratio = 1$$
   
 ![image](https://github.com/user-attachments/assets/a25aeea4-4f5b-4d26-ab18-6886a40d4ed5)
 ![image](https://github.com/user-attachments/assets/101dec2c-5cf4-419a-8e24-29d75470c78e)
+</details>
+
+### Inception of Layout and CMOS Fabrication Process :-
+ <details>
+  <summary>
+Expand or Collapse
+  </summary>
 
 </details>
  </details>

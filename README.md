@@ -71,6 +71,7 @@ Expand or Collapse
 **Step 4: Execution on Hardware**
 - The machine code is loaded into the hardware (via memory or other interfaces).
 - The hardware interprets the binary instructions, performing operations like arithmetic calculations, data movement, or - controlling peripherals as dictated by the binary program.
+  
 ![image](https://github.com/user-attachments/assets/4a3abb62-97ec-47fd-9930-105f12cebd31)
 - The output of the compiler are instructions and the output of the assembler is the binary pattern. We need some RTL (a Hardware Description Language) which understands and implements the particular instructions. This RTL is synthesised into a netlist in form of gates which is fabricated into the chip through a physical design implementation.
 #### Summary Workflow
@@ -104,25 +105,30 @@ Expand or Collapse
 Device models, technology details, design rules, standard cell libraries, etc.
 - Traditionally distributed under NDAs, making them inaccessible to the public.
 - On June 30, 2020, Google and SkyWater released the first open-source PDK for the 130nm process.
+  
   ![312922831-87384374-e66b-4ec6-b9c4-3fb92ad4d275](https://github.com/user-attachments/assets/bd51228c-f6cd-4a47-8228-573b095cdd66)
 
 ### ASIC Design Flow:
 - ASIC design involves many steps and tools combined into a cohesive ASIC flow.
 - Tools coordinate tasks like simulation, synthesis, placement, routing, and layout generation.
+  
   ![312933981-1762d6d6-c5f8-4bd9-8a3d-968eb4360889](https://github.com/user-attachments/assets/05a3340c-f147-4c19-af0a-36e12f7b0ff0)
 
 ### OpenLANE Flow:
 - An open-source ASIC design framework.
 - Objective: Transition the design from RTL to GDSII, the final format for chip fabrication.
 - Open-source initiatives like the SkyWater PDK and OpenLANE are making ASIC design more accessible, enabling innovation in academia and industry.
+  
   ![312934312-533f58ee-4524-4a18-abb5-36b4d6a56b1f](https://github.com/user-attachments/assets/5f798657-94d9-41a4-963a-d5772579b353)
 
 ### Synthesis:
 - Synthesis is the process of convertion or translation of design RTL into circuits made out of Standard Cell Libraries (SCL) the resultant circuit is described in HDL and is usually reffered to as the Gate-Level Netlist.
 - Gate-Level Netlist is functionally equivalent to the RTL.
+  
   ![image](https://github.com/user-attachments/assets/a2f8c68f-1d29-40d8-b368-80c0201da5b7)
 - The fundemental building blocks which are the standard cells have regular layouts.
 - Each cell has different views/models which are utilised by different EDA tools like liberty view with electrical models of the cells, HDL behavioral models, SPICE or CDL views of the cells, Layout view which include GDSII view which is the detailed view and LEF view which is the abstract view.
+  
   ![image](https://github.com/user-attachments/assets/847c6756-320a-41ea-bac5-80443f9f2686)
 
 ### Chip Floor and Power Planning:
@@ -138,8 +144,10 @@ Device models, technology details, design rules, standard cell libraries, etc.
 ### Placement:
 - Macro placement is a vital step in digital circuit design that defines the physical location of large collections of components, known as macros, on a 2-dimensional chip.
 - The physical layout obtained during placement determines key performance metrics of the chip, such as power consumption, area, and performance.
+  
 ![image](https://github.com/user-attachments/assets/5ad0262a-1a6d-41a3-bcce-504ac36769e6)
 - Global placement provide approximate locations for all cells based on connectivity but in this stage the cells may be overlapped on each other and in detailed placement the positions obtained from global placements are minimally altered to make it legal (non-overlapping and in site-rows)
+  
 ![image](https://github.com/user-attachments/assets/45a514f0-c7b9-43a0-872a-359a1bc4fc02)
 ### Clock Tree Synthesis:
 - Clock Tree Synthesis is a technique for distributing the clock equally among all sequential parts of a VLSI design.
@@ -149,15 +157,18 @@ Device models, technology details, design rules, standard cell libraries, etc.
 - As a result, CTS is used to balance the skew and reduce insertion latency.
 - Before Clock Tree Synthesis, all clock pins were driven by a single clock source.
 - Clock tree synthesis includes both clock tree construction and clock tree balance.
+  
 ![image](https://github.com/user-attachments/assets/b0184966-cd5a-4bf2-b8ce-a5868bb38f16)
 - Clock skew is the time difference in arrival of clock at different components.
 ### Routing:
 - Routing in the VLSI design course is making physical connections between signal pins using metal layers.
 - Following Clock Tree Synthesis (CTS) and optimization, the routing step determines the exact pathways for interconnecting standard cells, macros, and I/O pins.
 - The layout creates electrical connections using metals and vias that are determined by the logical connections in the netlist (i.e.; logical connectivity converted as physical connectivity).
+  
 ![image](https://github.com/user-attachments/assets/c2341136-a12c-4d8c-ab65-2d4522f5529d)
 - The skywater PDK has 6 routing layers in which the lowest layer is called the local interconnect layer which is a Titanium Nitride layer.
 - The following 5 layers are all Aluminium layers.
+  
 ![image](https://github.com/user-attachments/assets/765108ee-41f6-4e80-9a02-3b86bbc34885)
 #### Detailed and Global Routing:
 - In VLSI design and chip layout, routing is key.
@@ -166,9 +177,11 @@ Device models, technology details, design rules, standard cell libraries, etc.
 - Global routing starts the process. It divides the chip into logical parts called buckets. This stage estimates the needed paths for each connection. It aims to fit all connections within the available resources.
 - Detailed routing comes next. It’s about making the actual wires for the chip. This step must follow strict rules for wire width and spacing. It ensures the circuit works right.
 - The two-stage method helps with complex designs. It tackles the big picture first, then the details. This way, designers manage the vast number of connections and rules.
+  
 ![image](https://github.com/user-attachments/assets/1493a098-442d-4d21-9121-337ff4bc2053)
 ### Sign off
 - In semiconductor design, “sign-off” during the tape-out (tapeout) of a chip refers to the formal approval process to ensure that the chip design is error-free, meets all specifications, and is ready for manufacturing at the foundry.
+  
 ![image](https://github.com/user-attachments/assets/7508ccc7-05a0-4ab0-9a54-704f0ea0ce43)
 - Once done with the routing the final layout can be generated which undergoes various Sign-Off checks.
 - Design Rules Checking (DRC) which verifies that the final layout honours all design fabrication rules.
@@ -188,9 +201,11 @@ Expand or Collapse
 - **_A NETLIST DESCRIBES THE CONNECTIVITY AND FLOW OF AN ELECTRONIC DESIGN._**
 - Dimensions of a chip is mostly dependant on dimensions of the logic gates.
 Converting the highlighted symbols into physical dimensions:
+
 ![image](https://github.com/user-attachments/assets/7c127126-2e37-4592-8bd5-7a6058e9978e)
 - A **CORE** is the section of the chip where the fundamental logic of the design is placed.
 - A **DIE**, which consists of core, is a small semiconductor material specimen on which the fundamental circuit is fabricated.
+  
 ![image](https://github.com/user-attachments/assets/d37d0c08-e769-44cf-b7f0-8d8dcbd1d6c1)
 
 $$Utilization\ Factor = \frac{Area\ Occupied\ By\ Netlist}{Total\ Area\ of\ The\ Core}$$
@@ -214,6 +229,7 @@ $$Aspect\ Ratio = 1$$
 - The arrangement of these **IPs** in a chip ia called floor planning.
 - These **IPs**/**BLOCKS** have user defined locations, and hence are placed in a chip before automated placement and routing. So they are called as **preplaced cells**.
 - Automated placement and routing tools places the remaining logiacal cells in the design onto the chip.
+  
   ![image](https://github.com/user-attachments/assets/3bcf4e44-ce01-48ef-89ad-500614cf41f7)
 ### Surrounding The Preplaced Cells with Decoupling Capacitors :-
 ![image](https://github.com/user-attachments/assets/62a1ae66-07a0-4bcc-9312-edfcc0f1e6be)
@@ -223,17 +239,21 @@ $$Aspect\ Ratio = 1$$
 ![image](https://github.com/user-attachments/assets/db829ed4-118e-4c8c-9811-2b8f41146896)
 - If power is drawn from only one point, then it it might result in a **VOLTAGE DROOP** in VDD or a **VOLTAGE BUMP** in the VSS.
 - The solution of this problem if to have many power supply points.
+  
 ![image](https://github.com/user-attachments/assets/6091d8fa-71db-47cf-839d-dbfee6b0999d)
 ![image](https://github.com/user-attachments/assets/9755dcec-3bd6-40b5-8297-45f8853cb34d)
 ### Pin Placement and Logical Cell Placement Blockage :-
 - The connectivity information between the gates is coded using VHDL/Verilog Language and is called as the **NETLIST**.
+  
 ![image](https://github.com/user-attachments/assets/deb9787e-5f65-409d-9564-8e56dba87bd6)
 - Avoid repetition of input or output pins
 - The area between the DIE and the CORE has to be blocked so that the space is reserved for pin configuration.
+  
 ![image](https://github.com/user-attachments/assets/86853323-4d6b-41a7-92e2-38371ddd64ea)
 ### Netlist Binding and Initial Place Design :-
 #### Library :
 - It consists of cells, shapes and size of the cells, various flavours of the same cells and timing information.
+  
 ![image](https://github.com/user-attachments/assets/84a0ef25-63a1-437d-b90c-fc1538058e99)
 ![image](https://github.com/user-attachments/assets/1fa9d260-84b6-41f8-ba0a-00437ef41ff5)
 #### Optimizing Placement :-
@@ -298,25 +318,16 @@ $$Aspect\ Ratio = 1$$
 - In other words, propagation delay is the time it takes for the input to reach the output.
 - Propagation delay in VLSI is normally described as the time difference between when the transitional input reaches 50% of its final value and when the output reaches 50% of its final value. This demonstrates the influence of input change.
 - In the above case, 50% is defined as the logic threshold at which output (or, more specifically, any signal) is presumed to flip states. It is represented by the symbol ‘tpd’. It is also known as gate delay.
+  
 ![image](https://github.com/user-attachments/assets/d5d2ca25-7920-4077-a9cd-da9b698fa310)
 ![image](https://github.com/user-attachments/assets/5c6c004c-2477-436a-9dc9-5e6b3b5faed0)
 #### Transition Time :
 - Transition delay or slew is defined as the time taken by signal to rise from 10 %( 20%) to the 90 %( 80%) of its maximum value. This is known as “rise time”.
 - Similarly “fall time” can be defined as the time taken by a signal to fall from 90 %( 80%) to the 10 %( 20%) of its maximum value.
 - Transition is the time it takes for the pin to change state.
+  
 ![image](https://github.com/user-attachments/assets/a25aeea4-4f5b-4d26-ab18-6886a40d4ed5)
 ![image](https://github.com/user-attachments/assets/101dec2c-5cf4-419a-8e24-29d75470c78e)
-
-
-
-
-
-
-
-
-
-
-  
 
 </details>
  </details>

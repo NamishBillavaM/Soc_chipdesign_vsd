@@ -484,10 +484,53 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ##### Legally placed Standard Cells :-
 ![image](https://github.com/user-attachments/assets/ea9f1f6a-8b99-43b7-a4fb-e362f10db77f)
 
+</details>
+
+### VTC SPICE Simulations :-
+<details>
+<summary>
+Expand or Collapse
+  </summary>
+
+### SPICE Deck :-
+- It is the connectivity information about a netlist.
+![image](https://github.com/user-attachments/assets/7e91e54a-0316-4e51-8cce-7798aa5f9dfb)
+
+#### Steps to Run VTC SPICE Simulations :-
+##### *Writing a SPICE Deck*
+ **1.] Defining the component connectivity**
+ **2.] Defining the the component values**
+ **3.] Identify the nodes**
+ **4.] Name the nodes**
+
+![image](https://github.com/user-attachments/assets/44136b52-c023-4302-ac47-89b6c71288d5)![image](https://github.com/user-attachments/assets/0e6a842c-16d2-4bfd-8ce2-0ec5d621cd97)
+##### SPICE Deck :-
+```bash
+*** MODEL Descriptions ***
+*** NETLIST Description ***
+M1 out in vdd vdd pmos W=0.375u L=0.25u
+M2 out in 0 0 nmos W=0.375u L=0.25u
+
+cload out 0 10f
+
+Vdd vdd 0 2.5
+Vin in 0 2.5
+*** SIMULATION Commands ***
+.op
+.dc Vin 0 2.5 0.05
+.LIB  "tsmc_025um_model.mod" CMOS_MODELS
+.end
+```
 
 
 
+
+
+
+
+ 
   </details>
+  
 </details>
 
 

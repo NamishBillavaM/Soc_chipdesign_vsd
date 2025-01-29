@@ -13,6 +13,7 @@ Expand or Collapse
   </summary>
 
 ### HOW TO TALK TO COMPUTERS
+
 <details>
   <summary>
 Expand or Collapse

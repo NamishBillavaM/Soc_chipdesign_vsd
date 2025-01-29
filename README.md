@@ -5,7 +5,8 @@
 Expand or Collapse
   </summary>
   
-## THEORY
+## THEORY 
+
 <details>
   <summary>
 Expand or Collapse

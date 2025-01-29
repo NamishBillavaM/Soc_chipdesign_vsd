@@ -536,18 +536,39 @@ Vin in 0 2.5
 - The effect of changing the Wp/Wn ratio is to shift the transient region of the VTC.
 - Increasing the width of the PMOS or the NMOS moves VM towards VDD or GND respectively.
 - This property can be very useful, as asymmetrical transfer characteristics are actually desirable in some designs.
+ </details>
+
+### Lab Steps to Git Clone VSDSTDCELLDESIGN :-
+<details>
+<summary>
+Expand or Collapse
+  </summary>
+
+```bash
+# Change directory to openlane
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+# Clone the repository with custom inverter design
+git clone https://github.com/nickson-jose/vsdstdcelldesign
+
+# Change into repository directory
+cd vsdstdcelldesign
+
+# Copy magic tech file to the repo directory for easy access
+cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech .
+
+# Check contents whether everything is present
+ls
+
+# Command to open custom inverter layout in magic
+magic -T sky130A.tech sky130_inv.mag &
+```
+![image](https://github.com/user-attachments/assets/18f9a55a-b5ba-4b94-898d-2333f07b9deb)
+![image](https://github.com/user-attachments/assets/ea12a4c4-810c-4567-aab4-92128ddbc1e1)
 
 
 
-
-
-
-
-
-
- 
-  </details>
-  
+</details>
 </details>
 
 

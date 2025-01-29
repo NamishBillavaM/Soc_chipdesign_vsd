@@ -81,6 +81,7 @@ Expand or Collapse
 - Synthesis → Converts RTL to a netlist of logic gates.
 - PnR → Maps the netlist to physical silicon.
 - Fabrication → Produces the physical chip ready to execute machine code.
+  
   </details>
   
 ### SOC DESIGN AND OPENLANE

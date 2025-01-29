@@ -344,10 +344,12 @@ Expand or Collapse
 
 ### 16-Mask CMOS Process :-
 - CMOS can be obtained by integrating both NMOS and PMOS transistors over the same silicon wafer. In N–well technology an n-type well is diffused on a p-type substrate whereas in P- well it is vice- verse.
- **1.] Selecting a Substrate :**
+
+  **1.] Selecting a Substrate :**
 - First we choose a substrate as a base for fabrication. For N- well, a P-type silicon substrate is selected.
  ![image](https://github.com/user-attachments/assets/a314bdbe-004e-48c9-b76c-c0f46354be03)
- **2.] Creating an Active Region for Transistors :**
+
+  **2.] Creating an Active Region for Transistors :**
 - Oxidation: The selective diffusion of n-type impurities is accomplished using SiO2 as a barrier which protects portions of the wafer against contamination of the substrate.
 - SiO2 is laid out by oxidation process done exposing the substrate to high-quality oxygen and hydrogen in an oxidation chamber at approximately 10000c.
 - Growing of Photoresist: At this stage to permit the selective etching, the SiO2 layer is subjected to the photolithography process.
@@ -360,7 +362,8 @@ Expand or Collapse
  ![image](https://github.com/user-attachments/assets/fc6e0d47-d201-45ad-a875-95aa735ed44a)
 - The process is referred to as LOCOS( Local Oxidation of Silicon ).
 - Si3N4 is stripped out using hot phosphoric acid.
- **3.] N-Well and P-Well Formation :**
+
+  **3.] N-Well and P-Well Formation :**
 - Etching: The wafer is immersed in an etching solution of hydrofluoric acid, which removes the oxide from the areas through which dopants are to be diffused.
 - Removal of Whole Photoresist Layer: During the etching process, those portions of SiO2 which are protected by the photoresist layer are not affected.
 - The photoresist mask is now stripped off with a chemical solvent (hot H2SO4).
@@ -369,6 +372,7 @@ Expand or Collapse
 ![image](https://github.com/user-attachments/assets/1f60ac31-6dbb-4878-8347-7e305f48c86b)
 ![image](https://github.com/user-attachments/assets/9a63f0ab-19e6-4ec4-b541-19ccc6cfa61d)
 ![image](https://github.com/user-attachments/assets/869bd3df-89ce-4452-9e08-88269bef340d)
+
  **4.] Formation of Gate Terminal :**
 ![image](https://github.com/user-attachments/assets/8e56c1a7-d35f-4cba-b419-265d25264ee7)
 ![image](https://github.com/user-attachments/assets/651c63ca-ef74-48bf-88be-f010b58292cf)
@@ -378,7 +382,8 @@ Expand or Collapse
 - So to prevent this “Self-aligned gate process” is preferred where gate regions are formed before the formation of source and drain using ion implantation.
 ![image](https://github.com/user-attachments/assets/4eda7dac-d2ec-4780-8dfa-645e02667cf6)
 ![image](https://github.com/user-attachments/assets/05fda87e-f0d7-420f-882d-b8528afb5ef7)
- **5.] Lightly Doped Drain( LDD ) Formation :**
+
+  **5.] Lightly Doped Drain( LDD ) Formation :**
   
 </details>
  </details>

@@ -739,25 +739,17 @@ $$50\%\ of\ 3.3\ V = 1.65\ V$$
 ![image](https://github.com/user-attachments/assets/97c422ba-e176-4516-8420-dafa776d7ab4)![image](https://github.com/user-attachments/assets/4413e7ee-acb3-45da-843a-d2d4add935b2)
 $$Fall\ Cell\ Delay = 4.07 - 4.05 = 0.02\ ns = 20\ ps$$
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </details>
+
+### Timing Modelling Using Delay Tables :-
+
+<details>
+<summary>
+Expand or Collapse
+  </summary>
+
+### Lab Steps to Convert Grid Info to Track Info :-
+
 </details>
 
 

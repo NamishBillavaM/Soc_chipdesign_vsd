@@ -687,6 +687,30 @@ Expand or Collapse
 - Running NGSPICE :
   
 ![image](https://github.com/user-attachments/assets/c32424e1-e5bc-4893-91f6-6acf64b4d4a0)
+- Calculating the Transition Time :
+$$Rise\ transition\ time = Time\ taken\ for\ output\ to\ rise\ to\ 80\% - Time\ taken\ for\ output\ to\ rise\ to\ 20\%$$
+$$20\%\ of\ output = 660\ mV$$
+$$80\%\ of\ output = 2.64\ V$$
+- 20%
+  
+![image](https://github.com/user-attachments/assets/c176d61b-2f6d-4cb8-92e4-6dfc0e9b0745)
+- 80%
+
+![image](https://github.com/user-attachments/assets/95aab0c8-7853-408b-b337-05f86d57a494)
+$$Fall\ transition\ time = 4.0955 - 4.0536 = 0.0419\ ns = 41.9\ ps$$
+- Calculating the Cell Fall Delay :
+$$Fall\ Cell\ Delay = Time\ taken\ for\ output\ to\ fall\ to\ 50\% - Time\ taken\ for\ input\ to\ rise\ to\ 50\%$$
+$$50\%\ of\ 3.3\ V = 1.65\ V$$
+
+![image](https://github.com/user-attachments/assets/97c422ba-e176-4516-8420-dafa776d7ab4)![image](https://github.com/user-attachments/assets/4413e7ee-acb3-45da-843a-d2d4add935b2)
+$$Fall\ Cell\ Delay = 4.07 - 4.05 = 0.02\ ns = 20\ ps$$
+
+
+
+
+
+
+
 
 
 

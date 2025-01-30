@@ -404,7 +404,41 @@ Expand or Collapse
   
 ![image](https://github.com/user-attachments/assets/e348f673-2363-439f-b8ad-74b34f4e6d06)
 
- **6.] Source and Drain Formarion :**
+  **6.] Source and Drain Formation :**
+
+ ![image](https://github.com/user-attachments/assets/e3308f55-f7a0-4fd6-a078-eed61ede9c10)
+ ![image](https://github.com/user-attachments/assets/680a547d-b9a9-4e04-a6ad-2ae9a4c97437)
+ ![image](https://github.com/user-attachments/assets/bf141534-cdfc-460f-b23b-c19adea73a13)
+
+  **7.] Local Interconnect Formation :**
+  - Deposition of Titanium :
+
+![image](https://github.com/user-attachments/assets/e65faca1-6748-4c77-ab3e-6597512d026e)
+![image](https://github.com/user-attachments/assets/29602f4d-1dd9-4e11-b7ee-74d810ecacf2)
+![image](https://github.com/user-attachments/assets/be39056b-4960-4874-be2c-49f05a8a45a9)
+
+ **8.] Higher Level Metal Formation :**
+
+ ![image](https://github.com/user-attachments/assets/161feb26-9a55-45e1-bba9-fbb2c8ba6bd1)
+ ![image](https://github.com/user-attachments/assets/bcc27594-5209-4864-8537-83e3781e3d46)
+ ![image](https://github.com/user-attachments/assets/3d5d6158-f664-4b17-8a5a-9b4385e122a3)
+ ![image](https://github.com/user-attachments/assets/149185c4-94df-4ed4-bfbe-dd36ac50a7bb)
+ ![image](https://github.com/user-attachments/assets/fe6c7cc7-da5d-48c2-b96c-510b8901bc72)
+
+ - Final output :
+![image](https://github.com/user-attachments/assets/f7286acd-68f1-4eda-8b92-e8597334263e)
+
+
+
+
+
+
+
+
+
+
+
+
  
 
 

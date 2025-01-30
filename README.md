@@ -451,6 +451,7 @@ bash-4.2$ ./flow.tcl -interactive
 ![image](https://github.com/user-attachments/assets/ffcd36fc-412c-42c7-b90c-3db03a4f3432)
 ![image](https://github.com/user-attachments/assets/d3ed419f-5416-4dbd-9fba-56b3f700f6c3)
 - a new directory will open in the runs folder
+  
 ![image](https://github.com/user-attachments/assets/854a0684-e24b-4a85-ae1c-6ecfd17c9748)
 </details>
 
@@ -478,6 +479,7 @@ Expand or Collapse
 $Flop\ Ratio = \frac{Number\ of\ D\ Flip\ Flops}{Total\ Number\ of\ Cells}$
 
 ##### CALCULATION OF FLOP RATIO USING DATA FROM SYNTHESIS STATISTICS REPORT :-
+
 ![image](https://github.com/user-attachments/assets/ef8f1059-6a0d-4739-8742-28ed44768dae)
 ![image](https://github.com/user-attachments/assets/04279ed1-15d0-40a8-af90-d4fc00af8a89)
 
@@ -532,14 +534,19 @@ cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/28-01
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
 ### Floorplan.def in MAGIC :-
+
 ![image](https://github.com/user-attachments/assets/50ba615c-4ef8-4b05-b4b0-e449309ff887)
 ### Equidistant Placement of PINS :-
+
 ![image](https://github.com/user-attachments/assets/2a1881b1-c4ae-4b00-8b6b-025df2965a74)
 ### PIN LAYER Is As Set In config.tcl :-
+
 ![image](https://github.com/user-attachments/assets/da86b69d-0fe0-4bea-bf57-a77f30c67cba)
 ### DECAP Cells and TAP Cells :-
+
 ![image](https://github.com/user-attachments/assets/a17d02ba-4122-4f75-b4d0-cea2d547ba5c)
 ### Unplaced Standard Cells :-
+
 ![image](https://github.com/user-attachments/assets/bbda129d-10fd-4fa6-bfd4-cff764d41d05)
 </details>
 
@@ -565,8 +572,10 @@ cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/28-01
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 ```
 #### Placement.def in Magic :-
+
 ![image](https://github.com/user-attachments/assets/900661c3-ceb5-4224-b5d1-90dfbddff636)
 ##### Legally placed Standard Cells :-
+
 ![image](https://github.com/user-attachments/assets/ea9f1f6a-8b99-43b7-a4fb-e362f10db77f)
 
 </details>
@@ -579,6 +588,7 @@ Expand or Collapse
 
 ### SPICE Deck :-
 - It is the connectivity information about a netlist.
+- 
 ![image](https://github.com/user-attachments/assets/7e91e54a-0316-4e51-8cce-7798aa5f9dfb)
 
 #### Steps to Run VTC SPICE Simulations :-
@@ -646,12 +656,15 @@ magic -T sky130A.tech sky130_inv.mag &
 ![image](https://github.com/user-attachments/assets/18f9a55a-b5ba-4b94-898d-2333f07b9deb)
 ![image](https://github.com/user-attachments/assets/e32c950d-ed82-42ba-abf7-62109819da35)
 #### Identification of NMOS and PMOS :-
+
 ![image](https://github.com/user-attachments/assets/b6f65345-3606-4c8e-b04a-90aaba3a9620)
 ![image](https://github.com/user-attachments/assets/2073158a-2397-4ff3-8442-5c9999c0bbce)
 #### DRC Error :-
+
 ![image](https://github.com/user-attachments/assets/345a6630-780f-447e-8f47-13ae5b29cfa3)
 ![image](https://github.com/user-attachments/assets/b12b69aa-4f8a-486b-826e-e22e880f2eac)
 #### DRC = 0
+
 ![image](https://github.com/user-attachments/assets/294c9a8b-477b-4829-966c-ce29aeaae7d4)
 </details>
 
@@ -663,12 +676,16 @@ Expand or Collapse
   
 ![image](https://github.com/user-attachments/assets/f3be22ef-a273-4d72-9d36-225a8c754c48)
 - Spice File Created and Opened :
+  
 ![image](https://github.com/user-attachments/assets/5f46c1a7-2784-41a4-a558-f87162cfbe69)
 - Mearsurement of grid in layout :
+  
 ![image](https://github.com/user-attachments/assets/95c04678-14be-4761-a9d7-bd88e92b82bd)
 - Changes made in Spice file :
+  
 ![image](https://github.com/user-attachments/assets/20174a51-13e0-49cc-ae9b-cbba5983bda4)
 - Running NGSPICE :
+  
 ![image](https://github.com/user-attachments/assets/c32424e1-e5bc-4893-91f6-6acf64b4d4a0)
 
 

@@ -384,6 +384,25 @@ Expand or Collapse
 ![image](https://github.com/user-attachments/assets/05fda87e-f0d7-420f-882d-b8528afb5ef7)
 
   **5.] Lightly Doped Drain( LDD ) Formation :**
+![image](https://github.com/user-attachments/assets/22576294-eb2a-492f-89d2-d3119caf4d7d)
+![image](https://github.com/user-attachments/assets/afcdcc48-b190-41a5-90a8-1c6a416fb2d7)
+![image](https://github.com/user-attachments/assets/534bcdb9-97eb-4c21-96d7-6037bb03bb6c)
+- Phosphorous implant :
+![image](https://github.com/user-attachments/assets/1613ad59-4dce-4854-aacd-7f264db536ae)
+- Boron implant :
+![image](https://github.com/user-attachments/assets/b5a4a8a4-b058-4ee7-a0cf-c573631a3bae)
+- Plasma anisotopic etching :
+![image](https://github.com/user-attachments/assets/e348f673-2363-439f-b8ad-74b34f4e6d06)
+
+ **6.] Source and Drain Formarion :**
+ 
+
+
+
+
+
+
+
   
 </details>
  </details>
@@ -616,6 +635,38 @@ magic -T sky130A.tech sky130_inv.mag &
 ![image](https://github.com/user-attachments/assets/ea12a4c4-810c-4567-aab4-92128ddbc1e1)
 ![image](https://github.com/user-attachments/assets/18f9a55a-b5ba-4b94-898d-2333f07b9deb)
 ![image](https://github.com/user-attachments/assets/e32c950d-ed82-42ba-abf7-62109819da35)
+#### Identification of NMOS and PMOS :-
+![image](https://github.com/user-attachments/assets/b6f65345-3606-4c8e-b04a-90aaba3a9620)
+![image](https://github.com/user-attachments/assets/2073158a-2397-4ff3-8442-5c9999c0bbce)
+#### DRC Error :-
+![image](https://github.com/user-attachments/assets/345a6630-780f-447e-8f47-13ae5b29cfa3)
+![image](https://github.com/user-attachments/assets/b12b69aa-4f8a-486b-826e-e22e880f2eac)
+#### DRC = 0
+![image](https://github.com/user-attachments/assets/294c9a8b-477b-4829-966c-ce29aeaae7d4)
+</details>
+
+### Lab Steps to Create Std Cell Layout and Extract Spice Netlist :-
+<details>
+<summary>
+Expand or Collapse
+  </summary>
+  
+![image](https://github.com/user-attachments/assets/f3be22ef-a273-4d72-9d36-225a8c754c48)
+- Spice File Created and Opened :
+![image](https://github.com/user-attachments/assets/5f46c1a7-2784-41a4-a558-f87162cfbe69)
+- Mearsurement of grid in layout :
+![image](https://github.com/user-attachments/assets/95c04678-14be-4761-a9d7-bd88e92b82bd)
+- Changes made in Spice file :
+![image](https://github.com/user-attachments/assets/20174a51-13e0-49cc-ae9b-cbba5983bda4)
+- Running NGSPICE :
+![image](https://github.com/user-attachments/assets/c32424e1-e5bc-4893-91f6-6acf64b4d4a0)
+
+
+
+
+
+
+
 
 
 

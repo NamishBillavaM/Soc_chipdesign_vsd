@@ -749,6 +749,37 @@ Expand or Collapse
   </summary>
 
 ### Lab Steps to Convert Grid Info to Track Info :-
+- Tracks.info :
+  
+![image](https://github.com/user-attachments/assets/a63fa156-0e5c-45fa-9d1f-d0c902975bbc)
+- New Lef File :
+
+![image](https://github.com/user-attachments/assets/57334d7e-e3fe-4080-a093-ea1d0b80de6f)
+- Copy Lef File to Picorv32a Src :
+```bash
+# Copy lef file
+cp sky130_vsdinv.lef ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+
+# List and check whether it's copied
+ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+
+# Copy lib files
+cp libs/sky130_fd_sc_hd__* ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+
+# List and check whether it's copied
+ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+```
+
+![image](https://github.com/user-attachments/assets/f8a6a054-a3f1-462d-96ca-9378187a3bd7)
+- Copying the sky130_fd_sc_hd__* File to Picorv32a Src :
+
+![image](https://github.com/user-attachments/assets/472ed297-438d-4ab1-9da7-f1a4cd69a7c9)
+![image](https://github.com/user-attachments/assets/65dd43fd-e5f2-4978-b9b8-cb4e0949c873)
+
+ 
+
+  
+
 
 </details>
 

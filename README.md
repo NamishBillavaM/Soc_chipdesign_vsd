@@ -347,6 +347,7 @@ Expand or Collapse
 
   **1.] Selecting a Substrate :**
 - First we choose a substrate as a base for fabrication. For N- well, a P-type silicon substrate is selected.
+  
  ![image](https://github.com/user-attachments/assets/a314bdbe-004e-48c9-b76c-c0f46354be03)
 
   **2.] Creating an Active Region for Transistors :**
@@ -357,6 +358,7 @@ Expand or Collapse
 - Masking: This step is the continuation of the photolithography process. In this step, a desired pattern of openness is made using a stencil. This stencil is used as a mask over the photoresist.
 - The substrate is now exposed to UV rays the photoresist present under the exposed regions of mask gets polymerized.
 - Removal of Unexposed Photoresist: The mask is removed and the unexposed region of photoresist is dissolved by developing wafer using a chemical such as Trichloroethylene.
+  
  ![image](https://github.com/user-attachments/assets/13076362-bd8d-4d9b-94ab-3be06043d0b7)
  ![image](https://github.com/user-attachments/assets/ba9b61ac-f37f-4fa4-b547-8d954e96a988)
  ![image](https://github.com/user-attachments/assets/fc6e0d47-d201-45ad-a875-95aa735ed44a)
@@ -368,30 +370,38 @@ Expand or Collapse
 - Removal of Whole Photoresist Layer: During the etching process, those portions of SiO2 which are protected by the photoresist layer are not affected.
 - The photoresist mask is now stripped off with a chemical solvent (hot H2SO4).
 - Formation of N-well: The n-type impurities are diffused into the p-type substrate through the exposed region thus forming an N- well.
+  
 ![image](https://github.com/user-attachments/assets/f02b8180-00a1-42d9-aca0-28edcfcb8948)
 ![image](https://github.com/user-attachments/assets/1f60ac31-6dbb-4878-8347-7e305f48c86b)
 ![image](https://github.com/user-attachments/assets/9a63f0ab-19e6-4ec4-b541-19ccc6cfa61d)
 ![image](https://github.com/user-attachments/assets/869bd3df-89ce-4452-9e08-88269bef340d)
 
  **4.] Formation of Gate Terminal :**
+ 
 ![image](https://github.com/user-attachments/assets/8e56c1a7-d35f-4cba-b419-265d25264ee7)
 ![image](https://github.com/user-attachments/assets/651c63ca-ef74-48bf-88be-f010b58292cf)
 - Removal of SiO2: The layer of SiO2 is now removed by using hydrofluoric acid.
+  
 ![image](https://github.com/user-attachments/assets/8a9450db-2725-4e43-af2b-e96c67168edd)
 - Deposition of Polysilicon: The misalignment of the gate of a CMOS transistor would lead to the unwanted capacitance which could harm circuit.
 - So to prevent this “Self-aligned gate process” is preferred where gate regions are formed before the formation of source and drain using ion implantation.
+  
 ![image](https://github.com/user-attachments/assets/4eda7dac-d2ec-4780-8dfa-645e02667cf6)
 ![image](https://github.com/user-attachments/assets/05fda87e-f0d7-420f-882d-b8528afb5ef7)
 
   **5.] Lightly Doped Drain( LDD ) Formation :**
+  
 ![image](https://github.com/user-attachments/assets/22576294-eb2a-492f-89d2-d3119caf4d7d)
 ![image](https://github.com/user-attachments/assets/afcdcc48-b190-41a5-90a8-1c6a416fb2d7)
 ![image](https://github.com/user-attachments/assets/534bcdb9-97eb-4c21-96d7-6037bb03bb6c)
 - Phosphorous implant :
+  
 ![image](https://github.com/user-attachments/assets/1613ad59-4dce-4854-aacd-7f264db536ae)
 - Boron implant :
+  
 ![image](https://github.com/user-attachments/assets/b5a4a8a4-b058-4ee7-a0cf-c573631a3bae)
 - Plasma anisotopic etching :
+  
 ![image](https://github.com/user-attachments/assets/e348f673-2363-439f-b8ad-74b34f4e6d06)
 
  **6.] Source and Drain Formarion :**

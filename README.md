@@ -449,8 +449,10 @@ assuming a slew of ’60ps’ and capacitance of ’50fF’ at node ‘B’ and 
 ![image](https://github.com/user-attachments/assets/3a322ce1-caf3-4e39-b0c9-88aa87829fb7)
 - There are 3 advantages of using AND gate as buffer
     1.] you tend to use identical buffer at level 2 i.e. AND gate as buffer
+  
     2.] you save power, by turning on/off the EN pin of AND gate 3 and disabling clock to whole bunch of
       flops connected to its output
+  
     3.] you maintain zero skew while doing above 2.
 
  </details>

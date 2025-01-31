@@ -438,7 +438,21 @@ Expand or Collapse
 
 ### Power Aware Clock Tree Synthesis :-
 
- 
+![image](https://github.com/user-attachments/assets/1504ba66-291d-402c-9140-ef78b4b15931)
+- Assuming a slew of ’40ps’ for the first buffer and capacitance of 60fF on node ‘A’, the delay of the first buffer
+can be easily evaluated using below NLDM table and it comes out to be x9.
+- And similarly, for the second level of buffering, the delay of the buffers ‘2’ and ‘3’ comes out to be y15
+assuming a slew of ’60ps’ and capacitance of ’50fF’ at node ‘B’ and ‘C’
+- This in turn results to ‘zero’ skew at clock endpoints.
+
+![image](https://github.com/user-attachments/assets/3a322ce1-caf3-4e39-b0c9-88aa87829fb7)
+- There are 3 advantages of using AND gate as buffer
+    1.] you tend to use identical buffer at level 2 i.e. AND gate as buffer
+    2.] you save power, by turning on/off the EN pin of AND gate 3 and disabling clock to whole bunch of
+      flops connected to its output
+    3.] you maintain zero skew while doing above 2.
+
+
  </details>
   </details>
  

@@ -431,6 +431,7 @@ Expand or Collapse
 </details>
 
 ### Timing Modelling Using Delay Tables :-
+
  <details>
   <summary>
 Expand or Collapse
@@ -452,8 +453,26 @@ assuming a slew of ’60ps’ and capacitance of ’50fF’ at node ‘B’ and 
       flops connected to its output
     3.] you maintain zero skew while doing above 2.
 
+ </details>
+
+### Setup Timing Analysis :-
+
+<details>
+  <summary>
+Expand or Collapse
+  </summary>
+
+- Setup time is the minimum amount of time the data signal should be held steady before the clock event so that the data are reliably sampled by the clock.
+- Hold time is the minimum amount of time the data signal should be held steady after the clock event so that the data are reliably sampled.
+- In digital designs, each and every flip-flop has some restrictions related to the data with respect to the clock in the form of windows in which data can change or not.
+- There is always a region around the clock edge in which input data should not change at the input of the flip-flop. This is because, if the data changes within this window, we cannot guarantee the output.
+- The output can be the result of either of the previous input, the new input or metastability.
+-  Setup time is defined as the minimum amount of time before the clock's active edge that the data must be stable for it to be latched correctly. In other words, each flip-flop (or any sequential element, in general) needs some time for the data to remain stable before the clock edge arrives, such that it can reliably capture the data. This duration is known as setup time.
+
+
 
  </details>
+ 
   </details>
  
 
@@ -783,13 +802,114 @@ ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 
 - Run openlane flow synthesis with newly inserted custom inverter cell :
 
+![434](https://github.com/user-attachments/assets/693268e8-af08-4490-a632-5eaaf31706cd)
+![435](https://github.com/user-attachments/assets/eee98f21-9185-4c31-b6ba-a9119c78c3e6)
+![436](https://github.com/user-attachments/assets/e144ca8e-e86c-41ca-a5a7-b8ca024080af)
 
- 
+- Noting down current design values generated before modifying parameters to improve timing.
 
-  
+![image](https://github.com/user-attachments/assets/34d8a1b0-cced-41ee-8622-45c3aa80ec2f)
+![image](https://github.com/user-attachments/assets/4652b28a-d3d0-4f0e-8c62-ee4babdaab55)
+
+- Commands to view and change parameters to improve timing and run synthesis :-
+```bash
+# We have to prep design so as to update variables
+prep -design picorv32a -tag 24-03_10-03 -overwrite
+
+# Addiitional commands to include newly added lef to openlane flow merged.lef
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+# Command to display current value of variable SYNTH_STRATEGY
+echo $::env(SYNTH_STRATEGY)
+
+# Command to set new value for SYNTH_STRATEGY
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+
+# Command to display current value of variable SYNTH_BUFFERING to check whether it's enabled
+echo $::env(SYNTH_BUFFERING)
+
+# Command to display current value of variable SYNTH_SIZING
+echo $::env(SYNTH_SIZING)
+
+# Command to set new value for SYNTH_SIZING
+set ::env(SYNTH_SIZING) 1
+
+# Command to display current value of variable SYNTH_DRIVING_CELL to check whether it's the proper cell or not
+echo $::env(SYNTH_DRIVING_CELL)
+
+# Now that the design is prepped and ready, we can run synthesis using following command
+run_synthesis
+# After synthesis, run floorplan
+run_floorplan
+# After floorplan, run placement
+run_placement
+```
+
+![image](https://github.com/user-attachments/assets/5dd29443-e4d5-4180-a75b-9f0b3e3a7a82)
+![image](https://github.com/user-attachments/assets/6ab79513-c028-4239-bf02-fad81f7b4b17)
+![image](https://github.com/user-attachments/assets/038df1ba-2165-4ae9-bec0-17d717cd300c)
+![image](https://github.com/user-attachments/assets/61529463-3176-41bf-acae-bb02f738294a)
+
+
+- Custom inverter inserted in placement def :
+
+![image](https://github.com/user-attachments/assets/a14ed660-051a-418f-93f2-7a2b371c62af)
 </details>
 
+### Post-Synthesis Timing Analysis With OpenSTA Tool :-
+<details>
+<summary>
+Expand or Collapse
+  </summary>
 
+- Commands to kickstart the OpenLANE flow, include new lef and perform synthesis :
+```bash
+# Change directory to openlane flow directory
+cd Desktop/work/tools/openlane_working_dir/openlane
+docker
+# Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
+./flow.tcl -interactive
+
+# Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
+package require openlane 0.9
+
+# Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+prep -design picorv32a
+
+# Adiitional commands to include newly added lef to openlane flow
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+# Command to set new value for SYNTH_SIZING
+set ::env(SYNTH_SIZING) 1
+
+# Now that the design is prepped and ready, we can run synthesis using following command
+run_synthesis
+```
+![image](https://github.com/user-attachments/assets/3708afdc-19ea-448c-b301-8ba42bfbf0ed)
+```bash
+# Change directory to openlane
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+# Command to invoke OpenSTA tool with script
+sta pre_sta.conf
+```
+![image](https://github.com/user-attachments/assets/088be44b-17e7-4b2b-b6db-c09f1d7b00e2)
+![image](https://github.com/user-attachments/assets/086f32db-fc56-433e-bfd3-9f6254591fa8)
+![image](https://github.com/user-attachments/assets/4904f2a6-4bda-4e8b-b08b-6a9dd3ab2b2b)
+![image](https://github.com/user-attachments/assets/a1ef96d8-5ce1-47e8-b60d-23b3fdf6564a)
+
+- Here more fanout is causing more delay.
+
+
+
+
+
+
+
+
+</details>
 </details>
 
 

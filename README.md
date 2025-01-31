@@ -428,28 +428,19 @@ Expand or Collapse
  - Final output :
 ![image](https://github.com/user-attachments/assets/f7286acd-68f1-4eda-8b92-e8597334263e)
 
+</details>
 
+### Timing Modelling Using Delay Tables :-
+ <details>
+  <summary>
+Expand or Collapse
+  </summary>
 
-
-
-
-
-
-
-
-
+### Power Aware Clock Tree Synthesis :-
 
  
-
-
-
-
-
-
-
-  
-</details>
  </details>
+  </details>
  
 
   
@@ -776,9 +767,13 @@ ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 ![image](https://github.com/user-attachments/assets/472ed297-438d-4ab1-9da7-f1a4cd69a7c9)
 ![image](https://github.com/user-attachments/assets/65dd43fd-e5f2-4978-b9b8-cb4e0949c873)
 
+- Run openlane flow synthesis with newly inserted custom inverter cell :
+
+
  
 
   
+</details>
 
 
 </details>

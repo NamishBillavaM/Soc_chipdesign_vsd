@@ -958,9 +958,8 @@ sta pre_sta.conf
 <summary>
 Expand or Collapse
   </summary>
-</details>
 
-- Commands to run STA in another terminal :
+  - Commands to run STA in another terminal :
 ```bash
 # Change directory to openlane
 cd Desktop/work/tools/openlane_working_dir/openlane

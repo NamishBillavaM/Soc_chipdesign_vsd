@@ -971,8 +971,9 @@ drc check
 drc why
 ```
 
-</details>
 ![image](https://github.com/user-attachments/assets/c8cf6f27-1399-4573-abeb-893fb49fe7f8)
+
+</details>
 
 ### Timing Modelling Using Delay Tables :-
 

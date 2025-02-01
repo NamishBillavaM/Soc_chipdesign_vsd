@@ -600,6 +600,9 @@ Expand or Collapse
       - Reduce the Noise Margin
       - Increase Signal Noise
       - Increase IR drop on power Supply lines
+
+![image](https://github.com/user-attachments/assets/5c4d1383-0df0-4c4d-b784-03ddafa0ee5b)
+
   
   </details>
    </details>
@@ -677,7 +680,7 @@ $PERCENTAGE\ OF\ D\ FLIP\ FLOPS' = 0.10842968539 * 100 = 10.842968539$
 
 </details>
 
-### RUNNING FLOORPLAN IN OPENLANE 
+### RUNNING FLOORPLAN IN OPENLANE :-
 <details>
 <summary>
 Expand or Collapse
@@ -748,7 +751,7 @@ Expand or Collapse
 # The placement process starts
 ```
   
-#### Load Placement.DEf in Magic :-
+#### Load Placement.def in Magic :-
 ```bash
 
 # Change directory to path containing generated placement def
@@ -1263,16 +1266,36 @@ exit
 </details> 
 
 ### Final Steps for RTL2GDS Using TritonRoute and OpenSTA :-
- 
- <details>
+
+<details>
 <summary>
 Expand or Collapse
   </summary>
+  
+### Lab Steps to Build Power Distribution Network :-
+
+<details>
+<summary>
+Expand or Collapse
+  </summary>
+  
+- Start openlane
+```bash
+# Change directory to openlane flow directory
+cd Desktop/work/tools/openlane_working_dir/openlane
+docker
+# Import required packages
+package require openlane 0.9
+# Tag old run to continue process
+prep -design picorv32a -tag 31-01_13-28
+# Generate pdn
+gen_pdn
+```
 
 
 
 
-
+</details> 
 </details> 
 </details> 
 

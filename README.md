@@ -112,6 +112,7 @@ Expand or Collapse
   
 ### SOC DESIGN AND OPENLANE
 
+
   <details>
   <summary>
 Expand or Collapse

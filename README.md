@@ -495,7 +495,14 @@ Expand or Collapse
 - Non-uniform sink location and varying sink capacitance also complicate the design of the H tree.
 
 ![image](https://github.com/user-attachments/assets/0e08e158-699b-439e-b0b8-a185da366173)
-
+  </details>
+   
+### Timing Analysis :-
+<details>
+  <summary>
+Expand or Collapse
+  </summary>
+  
 
 
    </details>
@@ -840,7 +847,7 @@ ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 - Commands to view and change parameters to improve timing and run synthesis :-
 ```bash
 # We have to prep design so as to update variables
-prep -design picorv32a -tag 24-03_10-03 -overwrite
+prep -design picorv32a -tag 31-01_13-28 -overwrite
 
 # Addiitional commands to include newly added lef to openlane flow merged.lef
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
@@ -927,16 +934,120 @@ sta pre_sta.conf
 ![image](https://github.com/user-attachments/assets/a1ef96d8-5ce1-47e8-b60d-23b3fdf6564a)
 
 - Here more fanout is causing more delay.
-
-
-
-
-
-
-
-
 </details>
+
+### Lab Steps to Run CTS Using TritonCTS :-
+<details>
+<summary>
+Expand or Collapse
+  </summary>
 </details>
+
+- Commands to run STA in another terminal :
+```bash
+# Change directory to openlane
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+# Command to invoke OpenSTA tool with script
+sta pre_sta.conf
+```
+
+![image](https://github.com/user-attachments/assets/b9618dd7-92c6-4413-94dd-cb1a2e8a48e2)
+![image](https://github.com/user-attachments/assets/2fb25264-c036-437b-baa3-724e3be11f6a)
+![image](https://github.com/user-attachments/assets/5d7828d3-872a-48ec-8c83-5a2702d0dcc1)
+- OR gate of drive strength 2 is driving 4 fanouts :
+
+![image](https://github.com/user-attachments/assets/0c1f093c-6910-4e36-bf9d-141420b69478)
+- Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4.
+```bash
+# Reports all the connections to a net
+report_net -connections _11672_
+
+# Checking command syntax
+help replace_cell
+
+# Replacing cell
+replace_cell _14510_ sky130_fd_sc_hd__or3_4
+
+# Generating custom timing report
+report_checks -fields {net cap slew input_pins} -digits 4
+```
+![image](https://github.com/user-attachments/assets/52dd90f0-db01-4ec9-896e-cccb24df58bd)
+![image](https://github.com/user-attachments/assets/ba0e27c5-ef47-48f5-8b81-5f71b80c05b5)
+**We started ECO fixes at wns -23.9000 and now we stand at wns -22.6173 we reduced around 1.2827 ns of violation**
+
+Commands to write verilog "\:
+```bash
+# Check syntax
+help write_verilog
+
+# Overwriting current synthesis netlist
+write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-01_13-28/results/synthesis/picorv32a.synthesis.v
+
+# Exit from OpenSTA since timing analysis is done
+exit
+```
+![image](https://github.com/user-attachments/assets/d0ede9cb-4758-47d4-ba86-6fe5ebe0bb35)
+- Commands to load the design and run necessary stages :
+```bash
+# Now once again we have to prep design so as to update variables
+prep -design picorv32a -tag 31-01_13-28 -overwrite
+
+# Addiitional commands to include newly added lef to openlane flow merged.lef
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+# Command to set new value for SYNTH_STRATEGY
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+
+# Command to set new value for SYNTH_SIZING
+set ::env(SYNTH_SIZING) 1
+
+# Now that the design is prepped and ready, we can run synthesis using following command
+run_synthesis
+
+# Follwing commands are alltogather sourced in "run_floorplan" command
+init_floorplan
+place_io
+tap_decap_or
+
+# Now we are ready to run placement
+run_placement
+
+# Incase getting error
+unset ::env(LIB_CTS)
+
+# With placement done we are now ready to run CTS
+run_cts
+```
+
+![image](https://github.com/user-attachments/assets/11041699-75be-4788-bfcb-1cacea0b4670)
+![image](https://github.com/user-attachments/assets/17861619-a770-42b7-b105-069aad80ef48)
+![image](https://github.com/user-attachments/assets/9efa7fa4-fbb4-4693-83ad-26d2ba109e12)
+![image](https://github.com/user-attachments/assets/b92de19d-6d48-4aaf-8b84-8f5b12df76ef)
+![image](https://github.com/user-attachments/assets/58b732d3-0f82-4b87-85da-942f4aff60e2)
+- CTS variables :
+
+![image](https://github.com/user-attachments/assets/c0ec0dcf-b3ea-4c47-b8bf-642d9ced0766)
+- Run CTS :
+
+![image](https://github.com/user-attachments/assets/a6954fa1-6226-466a-9c98-348668ea0f57)
+![image](https://github.com/user-attachments/assets/49c1db82-77f3-4a27-bbe8-f97e35397f4e)
+![image](https://github.com/user-attachments/assets/c606901c-a885-4234-97ef-7a7b1e2f5eb7)
+
+
+
+
+
+
+
+
+
+
+
+
+
+</details> 
 
 
 

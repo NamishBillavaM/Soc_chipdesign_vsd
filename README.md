@@ -1291,9 +1291,29 @@ prep -design picorv32a -tag 31-01_13-28
 # Generate pdn
 gen_pdn
 ```
+![image](https://github.com/user-attachments/assets/ff6aaed7-33ae-46f6-9349-38ca66315324)
+![image](https://github.com/user-attachments/assets/032fe630-45ab-456b-964b-ff091a94f5d4)
+![image](https://github.com/user-attachments/assets/9dc20add-aaa1-453f-b675-6be6fee89e24)
+- Sample diagram :
+![image](https://github.com/user-attachments/assets/25db1d2e-45f8-4ecb-b412-5fc2cfc9764c)
 
+</details> 
 
+### Basics of Global and Detail Routing and Configure TritonRoute :-
 
+<details>
+<summary>
+Expand or Collapse
+  </summary>
+
+- Check the current def file
+```bash
+echo $::env(CURRENT_DEF)
+```
+
+- README.md :
+
+![image](https://github.com/user-attachments/assets/4eff3190-bd9a-465b-8f9e-a7b292e13349)
 
 </details> 
 </details> 

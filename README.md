@@ -502,6 +502,18 @@ Expand or Collapse
   <summary>
 Expand or Collapse
   </summary>
+
+- Setup time is defined as the minimum amount of time before the clock's active edge that the data must be stable for it to be latched correctly.
+- In other words, each flip-flop (or any sequential element, in general) needs some time for the data to remain stable before the clock edge arrives, such that it can reliably capture the data.
+- This duration is known as setup time.
+
+##### Cause/origin of setup time and hold time : 
+- Setup time and hold time are said to be the backbone of timing analysis.
+- Rightly so, for the chip to function properly, setup and hold timing constraints need to be met properly for each and every flip-flop in the design.
+- If even a single flop exists that does not meet setup and hold requirements for timing paths starting from/ending at it, the design will fail and meta-stability will occur.
+- It is very important to understand the origin of setup time and hold time as whole design functionality is ensured by these.
+![image](https://github.com/user-attachments/assets/dafb92ff-40df-4f42-a70c-5846a23d25fe)
+
   
 
 

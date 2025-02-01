@@ -472,10 +472,32 @@ Expand or Collapse
 - The output can be the result of either of the previous input, the new input or metastability.
 -  Setup time is defined as the minimum amount of time before the clock's active edge that the data must be stable for it to be latched correctly. In other words, each flip-flop (or any sequential element, in general) needs some time for the data to remain stable before the clock edge arrives, such that it can reliably capture the data. This duration is known as setup time.
 
+</details>
+
+### Clock Tree Synthesis :-
+
+<details>
+  <summary>
+Expand or Collapse
+  </summary>
+- In this algorithm Clock routing takes place like the English letter H. 
+- It is an easy approach that is based on the equalization of wire length.
+- In H tree-based approach the distance from the clock source points to each of the clock sink points are always the same.
+- In H tree approached the tool trying to minimize skew by making interconnection to subunits equal in length.
+  
+##### Advantages :-
+- Exact zero skew in terms of distance (here we are ignoring parasitic delay) due to the symmetry of the H tree.
+- Typically used for very special structures like top-level clock level distribution not for the entire clock then distributed to the different clock sinks.
+
+##### Disadvantages:
+- Blockages can spoil the symmetry of the H tree because sometimes blockages are present on the metal layers.
+- Non-uniform sink location and varying sink capacitance also complicate the design of the H tree.
+
+![image](https://github.com/user-attachments/assets/0e08e158-699b-439e-b0b8-a185da366173)
 
 
- </details>
- 
+
+   </details>
   </details>
  
 

@@ -518,13 +518,91 @@ Expand or Collapse
 ![image](https://github.com/user-attachments/assets/dafb92ff-40df-4f42-a70c-5846a23d25fe)
 ![image](https://github.com/user-attachments/assets/4a022655-266c-45b0-b543-0c8b14cba73a)
 
-
-  
-
-
-   </details>
   </details>
+
+### Routing and Design Rule check( DRC ) :-
+
+<details>
+  <summary>
+Expand or Collapse
+  </summary>
+
+- Routing in the VLSI design course is making physical connections between signal pins using metal layers.
+- Following Clock Tree Synthesis (CTS) and optimization, the routing step determines the exact pathways for interconnecting standard cells, macros, and I/O pins.
+- The layout creates electrical connections using metals and vias that are determined by the logical connections in the netlist (i.e.; logical connectivity converted as physical connectivity).
+
+- The routing mechanism establishes the specific pathways for interconnections.
+- This contains the regular cell and macro pins, block boundary pins, and chip boundary pads.
+- The tool includes information about the exact placements of blocks, pins of blocks, and I/O pads at chip borders after placement and CTS.
+- The utility can also access the logical connections defined by the netlist.
+- Metal and vias are used in the routing stage to build electrical connections in layout to fulfil all connections required by the netlist.
+- The program now depends on some “Design Rules Checks (DRC)” to perform the natural linkages.
+
+- Each metal layer in a grid-based routing system has its tracks and preferred routing direction, which are described in a unified cell in the standard cell library.
+- Routing activities are divided into four steps:
+     1.] Global route
+  
+     2.] Track Assignment
+  
+     3.] Detail Routing
+  
+     4.] Search and repair
+### Maze Routing - Lee's Algorithm :-
+
+![image](https://github.com/user-attachments/assets/6edf3991-a49b-4f87-85b7-2aed7f9d54bc)
+![image](https://github.com/user-attachments/assets/beb69144-4ada-45b7-a9c1-681b3a75db3f)
+- Routes with single bend are mostly preferred.
  
+![image](https://github.com/user-attachments/assets/a0838a18-3344-448a-b44a-547d3147a0ac)
+![image](https://github.com/user-attachments/assets/5172b4c9-3dec-41bb-a4de-b1f7233ac441)
+
+### DRC Clean :-
+- Design Rule Checking (DRC) is a physical design process to determine if chip layout satisfies a number of rules as defined by the semiconductor manufacturer.
+- Each semiconductor process will have its own set of rules and ensure sufficient margins such that normal variability in the manufacturing process will not result in chip failure.
+- Common types of DRC rules :
+    - Minimum width
+    - Minimum spacing 
+    - Minimum area
+    - Wide metal jog
+    - Signal short
+    - Via width
+    - Misaligned via wire
+    - Special notch spacing
+    - End of line spacing
+
+![image](https://github.com/user-attachments/assets/f007b324-d618-4f0b-9b74-552410a73335)
+![image](https://github.com/user-attachments/assets/3b9eb156-c946-4727-8b50-c0ac1557604d)
+![image](https://github.com/user-attachments/assets/ec5c228c-08f0-4ff9-a17c-5195ab7aad28)
+![image](https://github.com/user-attachments/assets/315c07de-f5ee-41ed-930e-8e92f175b6cc)
+- Signal short solved :
+
+![image](https://github.com/user-attachments/assets/bf86af28-8738-4645-983f-9dca8abeaede)
+
+![image](https://github.com/user-attachments/assets/a6006d1a-3842-4d3a-acdf-44eae1bee0b2)
+![image](https://github.com/user-attachments/assets/b8184dd0-24eb-41c2-a15c-691dbdbd277d)
+
+  </details>
+
+### Parasitics Extraction :-
+
+<details>
+  <summary>
+Expand or Collapse
+  </summary>
+
+- After completion of standard cell placement and power analysis, the next phase is to route the ASIC design and perform extraction of routing and parasitic parameters for the purpose of static timing analysis and simulation.
+- Parasitic extraction is the calculation of all routed net capacitance's and resistances for the purpose of delay calculation, static timing analysis, circuit simulation, and signal integrity analysis.
+- Parasitic extraction is performed by analyzing each net in the design and taking into account the effects (such as dielectric stack) of the net’s own topology and proximity to other nets.
+- For calculating the Delay, we should be aware about the Resistance/Capacitance of the Network/Devices and we can extract this info (R/C) from a layout and "Parasitic Extraction do this job efficiently".
+- Effect of Parasitic Devices on Circuit Design:
+      - Extra Power Consumption
+      - Effect the Delay of circuit
+      - Reduce the Noise Margin
+      - Increase Signal Noise
+      - Increase IR drop on power Supply lines
+  
+  </details>
+   </details>
 
   
   
@@ -735,6 +813,7 @@ Vin in 0 2.5
 - This property can be very useful, as asymmetrical transfer characteristics are actually desirable in some designs.
  </details>
 
+
 ### Lab Steps to Git Clone VSDSTDCELLDESIGN :-
 <details>
 <summary>
@@ -814,6 +893,76 @@ $$50\%\ of\ 3.3\ V = 1.65\ V$$
 $$Fall\ Cell\ Delay = 4.07 - 4.05 = 0.02\ ns = 20\ ps$$
 
 </details>
+
+### Finding the Problem in the DRC Section of the Old Magic Tech File for the Skywater Process and Fix It
+- Commands to download and view the corrupted skywater process magic tech file and associated files to perform drc corrections :
+```bash
+# Change to home directory
+cd
+
+# Command to download the lab files
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+
+# Since lab file is compressed command to extract it
+tar xfz drc_tests.tgz
+
+# Change directory into the lab folder
+cd drc_tests
+
+# List all files and directories present in the current directory
+ls -al
+
+# Command to view .magicrc file
+gvim .magicrc
+
+# Command to open magic tool in better graphics
+magic -d XR &
+```
+
+![image](https://github.com/user-attachments/assets/332c9d78-9f13-4586-b559-4b06ffb6f06a)
+- Incorrectly implemented poly.9 :
+
+![image](https://github.com/user-attachments/assets/c59b0ea1-51d7-45f0-bd3f-8b95123fb0a9)
+![image](https://github.com/user-attachments/assets/2fd05b58-d41a-4493-bab9-f0891130abba)
+- New commands inserted :
+
+![image](https://github.com/user-attachments/assets/35dff02a-fc0b-4ddf-a09c-938eeb86090e)
+![image](https://github.com/user-attachments/assets/738814cf-160d-42d9-b13d-1f494314555b)
+- Tkcon window :
+```bash
+# Loading updated tech file
+tech load sky130A.tech
+
+# Must re-run drc check to see updated drc errors
+drc check
+
+# Selecting region displaying the new errors and getting the error messages 
+drc why
+```
+
+![image](https://github.com/user-attachments/assets/d9e5a44e-a38f-4449-aa9a-de513c4807b8)
+- Incorrectly implemented nwell.4 complex rule correction.
+
+![image](https://github.com/user-attachments/assets/f6aa71e8-5888-4246-a14c-cc0157b0fa1b)
+- New commands inserted in sky130A.tech :
+  
+![image](https://github.com/user-attachments/assets/7685e688-be52-4daf-8815-a9e54b3b5829)
+- Tkcon window :
+```bash
+# Loading updated tech file
+tech load sky130A.tech
+
+# Change drc style to drc full
+drc style drc(full)
+
+# Must re-run drc check to see updated drc errors
+drc check
+
+# Selecting region displaying the new errors and getting the error messages 
+drc why
+```
+
+![image](https://github.com/user-attachments/assets/c8cf6f27-1399-4573-abeb-893fb49fe7f8)
 
 ### Timing Modelling Using Delay Tables :-
 
@@ -905,6 +1054,8 @@ run_placement
 - Custom inverter inserted in placement def :
 
 ![image](https://github.com/user-attachments/assets/a14ed660-051a-418f-93f2-7a2b371c62af)
+![image](https://github.com/user-attachments/assets/5fff42ca-fb27-4e3b-944d-0728d75913ce)
+
 </details>
 
 ### Post-Synthesis Timing Analysis With OpenSTA Tool :-
@@ -1050,6 +1201,76 @@ run_cts
 ![image](https://github.com/user-attachments/assets/a6954fa1-6226-466a-9c98-348668ea0f57)
 ![image](https://github.com/user-attachments/assets/49c1db82-77f3-4a27-bbe8-f97e35397f4e)
 ![image](https://github.com/user-attachments/assets/c606901c-a885-4234-97ef-7a7b1e2f5eb7)
+</details> 
+
+### Lab Steps to Analyze Timing with Real Clocks Using OpenSTA :-
+<details>
+<summary>
+Expand or Collapse
+  </summary>
+
+- Run openRoad :
+```bash
+openroad
+```
+
+- Create Db :
+```bash
+# Command to run OpenROAD tool
+openroad
+
+# Reading lef file
+read_lef /openLANE_flow/designs/picorv32a/runs/24-03_10-03/tmp/merged.lef
+
+# Reading def file
+read_def /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/cts/picorv32a.cts.def
+
+# Creating an OpenROAD database to work with
+write_db pico_cts.db
+
+# Loading the created database in OpenROAD
+read_db pico_cts.db
+
+# Read netlist post CTS
+read_verilog /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/synthesis/picorv32a.synthesis_cts.v
+
+# Read library for design
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+
+# Link design and library
+link_design picorv32a
+
+# Read in the custom sdc we created
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+
+# Setting all cloks as propagated clocks
+set_propagated_clock [all_clocks]
+
+# Check syntax of 'report_checks' command
+help report_checks
+
+# Generating custom timing report
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+
+# Exit to OpenLANE flow
+exit
+```
+
+![image](https://github.com/user-attachments/assets/9a94ee48-9744-4c8d-bac1-475a1797de79)
+![image](https://github.com/user-attachments/assets/5aafc7df-cc37-4aee-9866-4ed583af594c)
+![image](https://github.com/user-attachments/assets/db674f0e-db46-4db1-9569-91ca3df3e9e3)
+
+</details> 
+
+### Final Steps for RTL2GDS Using TritonRoute and OpenSTA :-
+ 
+ <details>
+<summary>
+Expand or Collapse
+  </summary>
+
+
+
 
 
 </details> 

@@ -898,6 +898,12 @@ $$Fall\ Cell\ Delay = 4.07 - 4.05 = 0.02\ ns = 20\ ps$$
 </details>
 
 ### Finding the Problem in the DRC Section of the Old Magic Tech File for the Skywater Process and Fix It
+
+<details>
+<summary>
+Expand or Collapse
+  </summary>
+  
 - Commands to download and view the corrupted skywater process magic tech file and associated files to perform drc corrections :
 ```bash
 # Change to home directory
@@ -965,6 +971,7 @@ drc check
 drc why
 ```
 
+</details>
 ![image](https://github.com/user-attachments/assets/c8cf6f27-1399-4573-abeb-893fb49fe7f8)
 
 ### Timing Modelling Using Delay Tables :-
